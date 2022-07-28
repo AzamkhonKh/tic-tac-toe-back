@@ -28,7 +28,7 @@ class Move extends FormRequest
     {
         // check last move
         $is_it_by_himself = Game::where('id', $this->game_id)
-            ->where('creator_id', '!=', 'opponent_id')
+            ->whereRaw('creator_id != opponent_id')
             ->count();
         if ($is_it_by_himself && GameMove::where('game_id', $this->game_id)->last()->user_id == $this->user_id){
             throw new Exception("You can not play from two side ))");

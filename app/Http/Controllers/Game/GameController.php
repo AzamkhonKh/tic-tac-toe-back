@@ -3,64 +3,66 @@
 namespace App\Http\Controllers\Game;
 
 use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
 use App\Models\Game;
 use App\Http\Requests\Game\Store;
 use App\Http\Requests\GameMove\Move;
 use App\Models\GameMove;
 use App\Repository\RedisRepo;
+use App\Http\Resources\Game\GamesCollection;
+use App\Http\Resources\Game\GameResource;
+use App\Http\Resources\Game\GameMoveResource;
 
 class GameController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\JsonResponse
      */
     public function index()
     {
         $id = auth()->id();
-        $response = Game::where('creator_id', $id)
+        $games = Game::where('creator_id', $id)
             ->orWhere('opponent_id', $id)
             ->get();
-        return $response;
+        return $this->sendResponse(new GamesCollection($games), __('game.index'));
     }
 
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
+     * @param  Store  $request
+     * @return \Illuminate\Http\JsonResponse
      */
     public function store(Store $request)
     {
         $game = Game::create($request->validated());
-        return $game;
+        return $this->sendResponse(new GameResource($game), __('game.store'));
     }
 
     /**
      * Display the specified resource.
      *
      * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\JsonResponse
      */
     public function show($id)
     {
         $game = Game::find($id);
-        return $game;
+        return $this->sendResponse(new GameResource($game), __('game.show'));
     }
 
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  Store  $request
      * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\JsonResponse
      */
     public function update(Store $request, $id)
     {
         $game = Game::find($id)->update($request->validated());
-        return $game;
+        return $this->sendResponse(new GameResource($game), __('game.update'));
     }
 
     /**
@@ -72,21 +74,11 @@ class GameController extends Controller
     public function destroy($id)
     {
         $game = Game::find($id);
-        if(auth()->id() == $game->creator_id){
-            $msg = 'can\'t delete game !';
-            if($game->deleted()){
-                $msg = 'deleted succesfully';
-                $code = 201;
-            }
-            $code = 200;
+        if(auth()->user()->can('delete',$game) && $game->delete()){
+            return $this->sendResponse([], __('game.deleted'));
         }else{
-            $msg = 'you are not creator of this game';
-            $code = 400;
+            return $this->sendError(__('error.delete',['model' => '']));
         }
-
-        return response()->json([
-            'message' => $msg
-        ], $code);
     }
 
     public function move(Move $req){
@@ -94,6 +86,6 @@ class GameController extends Controller
         // #todo : this do not work on windows env
         // $redis = new RedisRepo();
         // $redis->setValue('game:'.request('game_id').':moves:'.$move->id);
-        return $move;
+        return $this->sendResponse(new GameMoveResource($move), __('game.move.store'));
     }
 }

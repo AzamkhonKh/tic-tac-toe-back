@@ -1,0 +1,2134 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>Laravel Documentation</title>
+
+    <link href="https://fonts.googleapis.com/css?family=PT+Sans&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="../docs/css/theme-default.style.css" media="screen">
+    <link rel="stylesheet" href="../docs/css/theme-default.print.css" media="print">
+
+    <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.10/lodash.min.js"></script>
+
+    <link rel="stylesheet"
+          href="https://unpkg.com/@highlightjs/cdn-assets@10.7.2/styles/obsidian.min.css">
+    <script src="https://unpkg.com/@highlightjs/cdn-assets@10.7.2/highlight.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jets/0.14.1/jets.min.js"></script>
+
+    <style id="language-style">
+        /* starts out as display none and is replaced with js later  */
+                    body .content .bash-example code { display: none; }
+                    body .content .javascript-example code { display: none; }
+            </style>
+
+    <script>
+        var baseUrl = "http://localhost";
+        var useCsrf = Boolean();
+        var csrfUrl = "/sanctum/csrf-cookie";
+    </script>
+    <script src="../docs/js/tryitout-3.35.0.js"></script>
+
+    <script src="../docs/js/theme-default-3.35.0.js"></script>
+
+</head>
+
+<body data-languages="[&quot;bash&quot;,&quot;javascript&quot;]">
+
+<a href="#" id="nav-button">
+    <span>
+        MENU
+        <img src="../docs/images/navbar.png" alt="navbar-image" />
+    </span>
+</a>
+<div class="tocify-wrapper">
+    
+            <div class="lang-selector">
+                                            <button type="button" class="lang-button" data-language-name="bash">bash</button>
+                                            <button type="button" class="lang-button" data-language-name="javascript">javascript</button>
+                    </div>
+    
+    <div class="search">
+        <input type="text" class="search" id="input-search" placeholder="Search">
+    </div>
+
+    <div id="toc">
+                                                                            <ul id="tocify-header-0" class="tocify-header">
+                    <li class="tocify-item level-1" data-unique="introduction">
+                        <a href="#introduction">Introduction</a>
+                    </li>
+                                            
+                                                                    </ul>
+                                                <ul id="tocify-header-1" class="tocify-header">
+                    <li class="tocify-item level-1" data-unique="authenticating-requests">
+                        <a href="#authenticating-requests">Authenticating requests</a>
+                    </li>
+                                            
+                                                </ul>
+                    
+                    <ul id="tocify-header-2" class="tocify-header">
+                <li class="tocify-item level-1" data-unique="endpoints">
+                    <a href="#endpoints">Endpoints</a>
+                </li>
+                                    <ul id="tocify-subheader-endpoints" class="tocify-subheader">
+                                                    <li class="tocify-item level-2" data-unique="endpoints-GETapi-user">
+                        <a href="#endpoints-GETapi-user">Display a listing of the resource.</a>
+                    </li>
+                                    <li class="tocify-item level-2" data-unique="endpoints-GETapi-game">
+                        <a href="#endpoints-GETapi-game">Display a listing of the resource.</a>
+                    </li>
+                                    <li class="tocify-item level-2" data-unique="endpoints-POSTapi-game">
+                        <a href="#endpoints-POSTapi-game">Store a newly created resource in storage.</a>
+                    </li>
+                                    <li class="tocify-item level-2" data-unique="endpoints-GETapi-game--id-">
+                        <a href="#endpoints-GETapi-game--id-">Display the specified resource.</a>
+                    </li>
+                                    <li class="tocify-item level-2" data-unique="endpoints-PUTapi-game--id-">
+                        <a href="#endpoints-PUTapi-game--id-">Update the specified resource in storage.</a>
+                    </li>
+                                    <li class="tocify-item level-2" data-unique="endpoints-DELETEapi-game--id-">
+                        <a href="#endpoints-DELETEapi-game--id-">Remove the specified resource from storage.</a>
+                    </li>
+                                    <li class="tocify-item level-2" data-unique="endpoints-POSTapi-login">
+                        <a href="#endpoints-POSTapi-login">POST api/login</a>
+                    </li>
+                                    <li class="tocify-item level-2" data-unique="endpoints-POSTapi-register">
+                        <a href="#endpoints-POSTapi-register">POST api/register</a>
+                    </li>
+                                    <li class="tocify-item level-2" data-unique="endpoints-GETapi-user--id-">
+                        <a href="#endpoints-GETapi-user--id-">Display the specified resource.</a>
+                    </li>
+                                    <li class="tocify-item level-2" data-unique="endpoints-PUTapi-user--id-">
+                        <a href="#endpoints-PUTapi-user--id-">Update the specified resource in storage.</a>
+                    </li>
+                                    <li class="tocify-item level-2" data-unique="endpoints-DELETEapi-user--id-">
+                        <a href="#endpoints-DELETEapi-user--id-">Remove the specified resource from storage.</a>
+                    </li>
+                                                    </ul>
+                            </ul>
+        
+                        
+            </div>
+
+            <ul class="toc-footer" id="toc-footer">
+                            <li><a href="../docs/collection.json">View Postman collection</a></li>
+                            <li><a href="../docs/openapi.yaml">View OpenAPI spec</a></li>
+                            <li><a href="http://github.com/knuckleswtf/scribe">Documentation powered by Scribe ✍</a></li>
+                    </ul>
+        <ul class="toc-footer" id="last-updated">
+        <li>Last updated: July 28 2022</li>
+    </ul>
+</div>
+
+<div class="page-wrapper">
+    <div class="dark-box"></div>
+    <div class="content">
+        <h1 id="introduction">Introduction</h1>
+<p>This documentation aims to provide all the information you need to work with our API.</p>
+<aside>As you scroll, you'll see code examples for working with the API in different programming languages in the dark area to the right (or as part of the content on mobile).
+You can switch the language used with the tabs at the top right (or from the nav menu at the top left on mobile).</aside>
+<blockquote>
+<p>Base URL</p>
+</blockquote>
+<pre><code class="language-yaml">http://localhost</code></pre>
+
+        <h1 id="authenticating-requests">Authenticating requests</h1>
+<p>This API is not authenticated.</p>
+
+        <h1 id="endpoints">Endpoints</h1>
+
+    
+
+            <h2 id="endpoints-GETapi-user">Display a listing of the resource.</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-GETapi-user">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request GET \
+    --get "http://localhost/api/user" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json"</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://localhost/api/user"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers,
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-GETapi-user">
+            <blockquote>
+            <p>Example response (401):</p>
+        </blockquote>
+                <details class="annotation">
+            <summary>
+                <small onclick="textContent = parentElement.parentElement.open ? 'Show headers' : 'Hide headers'">Show headers</small>
+            </summary>
+            <pre><code class="language-http">cache-control: no-cache, private
+content-type: application/json
+access-control-allow-origin: *
+ </code></pre>
+        </details>         <pre>
+
+<code class="language-json">{
+    &quot;message&quot;: &quot;Unauthenticated.&quot;
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-GETapi-user" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-GETapi-user"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-GETapi-user"></code></pre>
+</span>
+<span id="execution-error-GETapi-user" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-GETapi-user"></code></pre>
+</span>
+<form id="form-GETapi-user" data-method="GET"
+      data-path="api/user"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}'
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('GETapi-user', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-GETapi-user"
+                    onclick="tryItOut('GETapi-user');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-GETapi-user"
+                    onclick="cancelTryOut('GETapi-user');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-GETapi-user" hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-green">GET</small>
+            <b><code>api/user</code></b>
+        </p>
+                    </form>
+
+            <h2 id="endpoints-GETapi-game">Display a listing of the resource.</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-GETapi-game">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request GET \
+    --get "http://localhost/api/game" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json"</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://localhost/api/game"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers,
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-GETapi-game">
+            <blockquote>
+            <p>Example response (401):</p>
+        </blockquote>
+                <details class="annotation">
+            <summary>
+                <small onclick="textContent = parentElement.parentElement.open ? 'Show headers' : 'Hide headers'">Show headers</small>
+            </summary>
+            <pre><code class="language-http">cache-control: no-cache, private
+content-type: application/json
+access-control-allow-origin: *
+ </code></pre>
+        </details>         <pre>
+
+<code class="language-json">{
+    &quot;message&quot;: &quot;Unauthenticated.&quot;
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-GETapi-game" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-GETapi-game"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-GETapi-game"></code></pre>
+</span>
+<span id="execution-error-GETapi-game" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-GETapi-game"></code></pre>
+</span>
+<form id="form-GETapi-game" data-method="GET"
+      data-path="api/game"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}'
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('GETapi-game', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-GETapi-game"
+                    onclick="tryItOut('GETapi-game');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-GETapi-game"
+                    onclick="cancelTryOut('GETapi-game');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-GETapi-game" hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-green">GET</small>
+            <b><code>api/game</code></b>
+        </p>
+                    </form>
+
+            <h2 id="endpoints-POSTapi-game">Store a newly created resource in storage.</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-POSTapi-game">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request POST \
+    "http://localhost/api/game" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json" \
+    --data "{
+    \"creator_id\": \"reiciendis\",
+    \"opponent_id\": \"nemo\",
+    \"grid\": 19,
+    \"game_finished\": false,
+    \"creator_win\": true,
+    \"schedulet_at\": \"2022-07-28T06:17:46\"
+}"
+</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://localhost/api/game"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+let body = {
+    "creator_id": "reiciendis",
+    "opponent_id": "nemo",
+    "grid": 19,
+    "game_finished": false,
+    "creator_win": true,
+    "schedulet_at": "2022-07-28T06:17:46"
+};
+
+fetch(url, {
+    method: "POST",
+    headers,
+    body: JSON.stringify(body),
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-POSTapi-game">
+            <blockquote>
+            <p>Example response (401):</p>
+        </blockquote>
+                <details class="annotation">
+            <summary>
+                <small onclick="textContent = parentElement.parentElement.open ? 'Show headers' : 'Hide headers'">Show headers</small>
+            </summary>
+            <pre><code class="language-http">cache-control: no-cache, private
+content-type: application/json
+access-control-allow-origin: *
+ </code></pre>
+        </details>         <pre>
+
+<code class="language-json">{
+    &quot;message&quot;: &quot;Unauthenticated.&quot;
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-POSTapi-game" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-POSTapi-game"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-POSTapi-game"></code></pre>
+</span>
+<span id="execution-error-POSTapi-game" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-POSTapi-game"></code></pre>
+</span>
+<form id="form-POSTapi-game" data-method="POST"
+      data-path="api/game"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}'
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('POSTapi-game', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-POSTapi-game"
+                    onclick="tryItOut('POSTapi-game');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-POSTapi-game"
+                    onclick="cancelTryOut('POSTapi-game');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-POSTapi-game" hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-black">POST</small>
+            <b><code>api/game</code></b>
+        </p>
+                            <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+        <p>
+            <b><code>creator_id</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
+                <input type="text"
+               name="creator_id"
+               data-endpoint="POSTapi-game"
+               value="reiciendis"
+               data-component="body" hidden>
+    <br>
+
+        </p>
+                <p>
+            <b><code>opponent_id</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
+                <input type="text"
+               name="opponent_id"
+               data-endpoint="POSTapi-game"
+               value="nemo"
+               data-component="body" hidden>
+    <br>
+
+        </p>
+                <p>
+            <b><code>grid</code></b>&nbsp;&nbsp;<small>integer</small>  &nbsp;
+                <input type="number"
+               name="grid"
+               data-endpoint="POSTapi-game"
+               value="19"
+               data-component="body" hidden>
+    <br>
+
+        </p>
+                <p>
+            <b><code>game_finished</code></b>&nbsp;&nbsp;<small>boolean</small>     <i>optional</i> &nbsp;
+                <label data-endpoint="POSTapi-game" hidden>
+            <input type="radio" name="game_finished"
+                   value="true"
+                   data-endpoint="POSTapi-game"
+                   data-component="body"
+            >
+            <code>true</code>
+        </label>
+        <label data-endpoint="POSTapi-game" hidden>
+            <input type="radio" name="game_finished"
+                   value="false"
+                   data-endpoint="POSTapi-game"
+                   data-component="body"
+            >
+            <code>false</code>
+        </label>
+    <br>
+
+        </p>
+                <p>
+            <b><code>creator_win</code></b>&nbsp;&nbsp;<small>boolean</small>     <i>optional</i> &nbsp;
+                <label data-endpoint="POSTapi-game" hidden>
+            <input type="radio" name="creator_win"
+                   value="true"
+                   data-endpoint="POSTapi-game"
+                   data-component="body"
+            >
+            <code>true</code>
+        </label>
+        <label data-endpoint="POSTapi-game" hidden>
+            <input type="radio" name="creator_win"
+                   value="false"
+                   data-endpoint="POSTapi-game"
+                   data-component="body"
+            >
+            <code>false</code>
+        </label>
+    <br>
+
+        </p>
+                <p>
+            <b><code>schedulet_at</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
+                <input type="text"
+               name="schedulet_at"
+               data-endpoint="POSTapi-game"
+               value="2022-07-28T06:17:46"
+               data-component="body" hidden>
+    <br>
+<p>Must be a valid date.</p>
+        </p>
+                <p>
+            <b><code>state</code></b>&nbsp;&nbsp;<small>string</small>     <i>optional</i> &nbsp;
+                <input type="text"
+               name="state"
+               data-endpoint="POSTapi-game"
+               value=""
+               data-component="body" hidden>
+    <br>
+
+        </p>
+        </form>
+
+            <h2 id="endpoints-GETapi-game--id-">Display the specified resource.</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-GETapi-game--id-">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request GET \
+    --get "http://localhost/api/game/20" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json"</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://localhost/api/game/20"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers,
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-GETapi-game--id-">
+            <blockquote>
+            <p>Example response (401):</p>
+        </blockquote>
+                <details class="annotation">
+            <summary>
+                <small onclick="textContent = parentElement.parentElement.open ? 'Show headers' : 'Hide headers'">Show headers</small>
+            </summary>
+            <pre><code class="language-http">cache-control: no-cache, private
+content-type: application/json
+access-control-allow-origin: *
+ </code></pre>
+        </details>         <pre>
+
+<code class="language-json">{
+    &quot;message&quot;: &quot;Unauthenticated.&quot;
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-GETapi-game--id-" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-GETapi-game--id-"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-GETapi-game--id-"></code></pre>
+</span>
+<span id="execution-error-GETapi-game--id-" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-GETapi-game--id-"></code></pre>
+</span>
+<form id="form-GETapi-game--id-" data-method="GET"
+      data-path="api/game/{id}"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}'
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('GETapi-game--id-', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-GETapi-game--id-"
+                    onclick="tryItOut('GETapi-game--id-');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-GETapi-game--id-"
+                    onclick="cancelTryOut('GETapi-game--id-');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-GETapi-game--id-" hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-green">GET</small>
+            <b><code>api/game/{id}</code></b>
+        </p>
+                    <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
+                    <p>
+                <b><code>id</code></b>&nbsp;&nbsp;<small>integer</small>  &nbsp;
+                <input type="number"
+               name="id"
+               data-endpoint="GETapi-game--id-"
+               value="20"
+               data-component="url" hidden>
+    <br>
+<p>The ID of the game.</p>
+            </p>
+                    </form>
+
+            <h2 id="endpoints-PUTapi-game--id-">Update the specified resource in storage.</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-PUTapi-game--id-">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request PUT \
+    "http://localhost/api/game/14" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json" \
+    --data "{
+    \"creator_id\": \"incidunt\",
+    \"opponent_id\": \"neque\",
+    \"grid\": 19,
+    \"game_finished\": false,
+    \"creator_win\": false,
+    \"schedulet_at\": \"2022-07-28T06:17:46\"
+}"
+</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://localhost/api/game/14"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+let body = {
+    "creator_id": "incidunt",
+    "opponent_id": "neque",
+    "grid": 19,
+    "game_finished": false,
+    "creator_win": false,
+    "schedulet_at": "2022-07-28T06:17:46"
+};
+
+fetch(url, {
+    method: "PUT",
+    headers,
+    body: JSON.stringify(body),
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-PUTapi-game--id-">
+            <blockquote>
+            <p>Example response (401):</p>
+        </blockquote>
+                <details class="annotation">
+            <summary>
+                <small onclick="textContent = parentElement.parentElement.open ? 'Show headers' : 'Hide headers'">Show headers</small>
+            </summary>
+            <pre><code class="language-http">cache-control: no-cache, private
+content-type: application/json
+access-control-allow-origin: *
+ </code></pre>
+        </details>         <pre>
+
+<code class="language-json">{
+    &quot;message&quot;: &quot;Unauthenticated.&quot;
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-PUTapi-game--id-" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-PUTapi-game--id-"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-PUTapi-game--id-"></code></pre>
+</span>
+<span id="execution-error-PUTapi-game--id-" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-PUTapi-game--id-"></code></pre>
+</span>
+<form id="form-PUTapi-game--id-" data-method="PUT"
+      data-path="api/game/{id}"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}'
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('PUTapi-game--id-', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-PUTapi-game--id-"
+                    onclick="tryItOut('PUTapi-game--id-');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-PUTapi-game--id-"
+                    onclick="cancelTryOut('PUTapi-game--id-');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-PUTapi-game--id-" hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-darkblue">PUT</small>
+            <b><code>api/game/{id}</code></b>
+        </p>
+            <p>
+            <small class="badge badge-purple">PATCH</small>
+            <b><code>api/game/{id}</code></b>
+        </p>
+                    <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
+                    <p>
+                <b><code>id</code></b>&nbsp;&nbsp;<small>integer</small>  &nbsp;
+                <input type="number"
+               name="id"
+               data-endpoint="PUTapi-game--id-"
+               value="14"
+               data-component="url" hidden>
+    <br>
+<p>The ID of the game.</p>
+            </p>
+                            <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+        <p>
+            <b><code>creator_id</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
+                <input type="text"
+               name="creator_id"
+               data-endpoint="PUTapi-game--id-"
+               value="incidunt"
+               data-component="body" hidden>
+    <br>
+
+        </p>
+                <p>
+            <b><code>opponent_id</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
+                <input type="text"
+               name="opponent_id"
+               data-endpoint="PUTapi-game--id-"
+               value="neque"
+               data-component="body" hidden>
+    <br>
+
+        </p>
+                <p>
+            <b><code>grid</code></b>&nbsp;&nbsp;<small>integer</small>  &nbsp;
+                <input type="number"
+               name="grid"
+               data-endpoint="PUTapi-game--id-"
+               value="19"
+               data-component="body" hidden>
+    <br>
+
+        </p>
+                <p>
+            <b><code>game_finished</code></b>&nbsp;&nbsp;<small>boolean</small>     <i>optional</i> &nbsp;
+                <label data-endpoint="PUTapi-game--id-" hidden>
+            <input type="radio" name="game_finished"
+                   value="true"
+                   data-endpoint="PUTapi-game--id-"
+                   data-component="body"
+            >
+            <code>true</code>
+        </label>
+        <label data-endpoint="PUTapi-game--id-" hidden>
+            <input type="radio" name="game_finished"
+                   value="false"
+                   data-endpoint="PUTapi-game--id-"
+                   data-component="body"
+            >
+            <code>false</code>
+        </label>
+    <br>
+
+        </p>
+                <p>
+            <b><code>creator_win</code></b>&nbsp;&nbsp;<small>boolean</small>     <i>optional</i> &nbsp;
+                <label data-endpoint="PUTapi-game--id-" hidden>
+            <input type="radio" name="creator_win"
+                   value="true"
+                   data-endpoint="PUTapi-game--id-"
+                   data-component="body"
+            >
+            <code>true</code>
+        </label>
+        <label data-endpoint="PUTapi-game--id-" hidden>
+            <input type="radio" name="creator_win"
+                   value="false"
+                   data-endpoint="PUTapi-game--id-"
+                   data-component="body"
+            >
+            <code>false</code>
+        </label>
+    <br>
+
+        </p>
+                <p>
+            <b><code>schedulet_at</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
+                <input type="text"
+               name="schedulet_at"
+               data-endpoint="PUTapi-game--id-"
+               value="2022-07-28T06:17:46"
+               data-component="body" hidden>
+    <br>
+<p>Must be a valid date.</p>
+        </p>
+                <p>
+            <b><code>state</code></b>&nbsp;&nbsp;<small>string</small>     <i>optional</i> &nbsp;
+                <input type="text"
+               name="state"
+               data-endpoint="PUTapi-game--id-"
+               value=""
+               data-component="body" hidden>
+    <br>
+
+        </p>
+        </form>
+
+            <h2 id="endpoints-DELETEapi-game--id-">Remove the specified resource from storage.</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-DELETEapi-game--id-">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request DELETE \
+    "http://localhost/api/game/3" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json"</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://localhost/api/game/3"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "DELETE",
+    headers,
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-DELETEapi-game--id-">
+            <blockquote>
+            <p>Example response (401):</p>
+        </blockquote>
+                <details class="annotation">
+            <summary>
+                <small onclick="textContent = parentElement.parentElement.open ? 'Show headers' : 'Hide headers'">Show headers</small>
+            </summary>
+            <pre><code class="language-http">cache-control: no-cache, private
+content-type: application/json
+access-control-allow-origin: *
+ </code></pre>
+        </details>         <pre>
+
+<code class="language-json">{
+    &quot;message&quot;: &quot;Unauthenticated.&quot;
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-DELETEapi-game--id-" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-DELETEapi-game--id-"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-DELETEapi-game--id-"></code></pre>
+</span>
+<span id="execution-error-DELETEapi-game--id-" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-DELETEapi-game--id-"></code></pre>
+</span>
+<form id="form-DELETEapi-game--id-" data-method="DELETE"
+      data-path="api/game/{id}"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}'
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('DELETEapi-game--id-', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-DELETEapi-game--id-"
+                    onclick="tryItOut('DELETEapi-game--id-');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-DELETEapi-game--id-"
+                    onclick="cancelTryOut('DELETEapi-game--id-');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-DELETEapi-game--id-" hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-red">DELETE</small>
+            <b><code>api/game/{id}</code></b>
+        </p>
+                    <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
+                    <p>
+                <b><code>id</code></b>&nbsp;&nbsp;<small>integer</small>  &nbsp;
+                <input type="number"
+               name="id"
+               data-endpoint="DELETEapi-game--id-"
+               value="3"
+               data-component="url" hidden>
+    <br>
+<p>The ID of the game.</p>
+            </p>
+                    </form>
+
+            <h2 id="endpoints-POSTapi-login">POST api/login</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-POSTapi-login">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request POST \
+    "http://localhost/api/login" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json" \
+    --data "{
+    \"email\": \"eichmann.lynn@example.com\",
+    \"password\": \"numquam\"
+}"
+</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://localhost/api/login"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+let body = {
+    "email": "eichmann.lynn@example.com",
+    "password": "numquam"
+};
+
+fetch(url, {
+    method: "POST",
+    headers,
+    body: JSON.stringify(body),
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-POSTapi-login">
+            <blockquote>
+            <p>Example response (500):</p>
+        </blockquote>
+                <details class="annotation">
+            <summary>
+                <small onclick="textContent = parentElement.parentElement.open ? 'Show headers' : 'Hide headers'">Show headers</small>
+            </summary>
+            <pre><code class="language-http">cache-control: no-cache, private
+content-type: application/json
+x-ratelimit-limit: 60
+x-ratelimit-remaining: 59
+access-control-allow-origin: *
+ </code></pre>
+        </details>         <pre>
+
+<code class="language-json">{
+    &quot;message&quot;: &quot;Method Illuminate\\Validation\\Validator::validateReequired does not exist.&quot;,
+    &quot;exception&quot;: &quot;BadMethodCallException&quot;,
+    &quot;file&quot;: &quot;D:\\front\\tic-tac-toe-back\\vendor\\laravel\\framework\\src\\Illuminate\\Validation\\Validator.php&quot;,
+    &quot;line&quot;: 1534,
+    &quot;trace&quot;: [
+        {
+            &quot;file&quot;: &quot;D:\\front\\tic-tac-toe-back\\vendor\\laravel\\framework\\src\\Illuminate\\Validation\\Validator.php&quot;,
+            &quot;line&quot;: 610,
+            &quot;function&quot;: &quot;__call&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Validation\\Validator&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;D:\\front\\tic-tac-toe-back\\vendor\\laravel\\framework\\src\\Illuminate\\Validation\\Validator.php&quot;,
+            &quot;line&quot;: 416,
+            &quot;function&quot;: &quot;validateAttribute&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Validation\\Validator&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;D:\\front\\tic-tac-toe-back\\vendor\\laravel\\framework\\src\\Illuminate\\Validation\\Validator.php&quot;,
+            &quot;line&quot;: 447,
+            &quot;function&quot;: &quot;passes&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Validation\\Validator&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;D:\\front\\tic-tac-toe-back\\vendor\\laravel\\framework\\src\\Illuminate\\Validation\\ValidatesWhenResolvedTrait.php&quot;,
+            &quot;line&quot;: 25,
+            &quot;function&quot;: &quot;fails&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Validation\\Validator&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;D:\\front\\tic-tac-toe-back\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Providers\\FormRequestServiceProvider.php&quot;,
+            &quot;line&quot;: 30,
+            &quot;function&quot;: &quot;validateResolved&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Foundation\\Http\\FormRequest&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;D:\\front\\tic-tac-toe-back\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php&quot;,
+            &quot;line&quot;: 1265,
+            &quot;function&quot;: &quot;Illuminate\\Foundation\\Providers\\{closure}&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Foundation\\Providers\\FormRequestServiceProvider&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;D:\\front\\tic-tac-toe-back\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php&quot;,
+            &quot;line&quot;: 1230,
+            &quot;function&quot;: &quot;fireCallbackArray&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Container\\Container&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;D:\\front\\tic-tac-toe-back\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php&quot;,
+            &quot;line&quot;: 1215,
+            &quot;function&quot;: &quot;fireAfterResolvingCallbacks&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Container\\Container&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;D:\\front\\tic-tac-toe-back\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php&quot;,
+            &quot;line&quot;: 778,
+            &quot;function&quot;: &quot;fireResolvingCallbacks&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Container\\Container&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;D:\\front\\tic-tac-toe-back\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php&quot;,
+            &quot;line&quot;: 851,
+            &quot;function&quot;: &quot;resolve&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Container\\Container&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;D:\\front\\tic-tac-toe-back\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php&quot;,
+            &quot;line&quot;: 694,
+            &quot;function&quot;: &quot;resolve&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Foundation\\Application&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;D:\\front\\tic-tac-toe-back\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php&quot;,
+            &quot;line&quot;: 836,
+            &quot;function&quot;: &quot;make&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Container\\Container&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;D:\\front\\tic-tac-toe-back\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\RouteDependencyResolverTrait.php&quot;,
+            &quot;line&quot;: 79,
+            &quot;function&quot;: &quot;make&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Foundation\\Application&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;D:\\front\\tic-tac-toe-back\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\RouteDependencyResolverTrait.php&quot;,
+            &quot;line&quot;: 48,
+            &quot;function&quot;: &quot;transformDependency&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Routing\\ControllerDispatcher&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;D:\\front\\tic-tac-toe-back\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\RouteDependencyResolverTrait.php&quot;,
+            &quot;line&quot;: 28,
+            &quot;function&quot;: &quot;resolveMethodDependencies&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Routing\\ControllerDispatcher&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;D:\\front\\tic-tac-toe-back\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\ControllerDispatcher.php&quot;,
+            &quot;line&quot;: 41,
+            &quot;function&quot;: &quot;resolveClassMethodDependencies&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Routing\\ControllerDispatcher&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;D:\\front\\tic-tac-toe-back\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Route.php&quot;,
+            &quot;line&quot;: 262,
+            &quot;function&quot;: &quot;dispatch&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Routing\\ControllerDispatcher&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;D:\\front\\tic-tac-toe-back\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Route.php&quot;,
+            &quot;line&quot;: 205,
+            &quot;function&quot;: &quot;runController&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Routing\\Route&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;D:\\front\\tic-tac-toe-back\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php&quot;,
+            &quot;line&quot;: 721,
+            &quot;function&quot;: &quot;run&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Routing\\Route&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;D:\\front\\tic-tac-toe-back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php&quot;,
+            &quot;line&quot;: 128,
+            &quot;function&quot;: &quot;Illuminate\\Routing\\{closure}&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Routing\\Router&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;D:\\front\\tic-tac-toe-back\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Middleware\\SubstituteBindings.php&quot;,
+            &quot;line&quot;: 50,
+            &quot;function&quot;: &quot;Illuminate\\Pipeline\\{closure}&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Pipeline\\Pipeline&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;D:\\front\\tic-tac-toe-back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php&quot;,
+            &quot;line&quot;: 167,
+            &quot;function&quot;: &quot;handle&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Routing\\Middleware\\SubstituteBindings&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;D:\\front\\tic-tac-toe-back\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Middleware\\ThrottleRequests.php&quot;,
+            &quot;line&quot;: 127,
+            &quot;function&quot;: &quot;Illuminate\\Pipeline\\{closure}&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Pipeline\\Pipeline&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;D:\\front\\tic-tac-toe-back\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Middleware\\ThrottleRequests.php&quot;,
+            &quot;line&quot;: 103,
+            &quot;function&quot;: &quot;handleRequest&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Routing\\Middleware\\ThrottleRequests&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;D:\\front\\tic-tac-toe-back\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Middleware\\ThrottleRequests.php&quot;,
+            &quot;line&quot;: 55,
+            &quot;function&quot;: &quot;handleRequestUsingNamedLimiter&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Routing\\Middleware\\ThrottleRequests&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;D:\\front\\tic-tac-toe-back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php&quot;,
+            &quot;line&quot;: 167,
+            &quot;function&quot;: &quot;handle&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Routing\\Middleware\\ThrottleRequests&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;D:\\front\\tic-tac-toe-back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php&quot;,
+            &quot;line&quot;: 103,
+            &quot;function&quot;: &quot;Illuminate\\Pipeline\\{closure}&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Pipeline\\Pipeline&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;D:\\front\\tic-tac-toe-back\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php&quot;,
+            &quot;line&quot;: 723,
+            &quot;function&quot;: &quot;then&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Pipeline\\Pipeline&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;D:\\front\\tic-tac-toe-back\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php&quot;,
+            &quot;line&quot;: 698,
+            &quot;function&quot;: &quot;runRouteWithinStack&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Routing\\Router&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;D:\\front\\tic-tac-toe-back\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php&quot;,
+            &quot;line&quot;: 662,
+            &quot;function&quot;: &quot;runRoute&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Routing\\Router&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;D:\\front\\tic-tac-toe-back\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php&quot;,
+            &quot;line&quot;: 651,
+            &quot;function&quot;: &quot;dispatchToRoute&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Routing\\Router&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;D:\\front\\tic-tac-toe-back\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php&quot;,
+            &quot;line&quot;: 167,
+            &quot;function&quot;: &quot;dispatch&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Routing\\Router&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;D:\\front\\tic-tac-toe-back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php&quot;,
+            &quot;line&quot;: 128,
+            &quot;function&quot;: &quot;Illuminate\\Foundation\\Http\\{closure}&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Foundation\\Http\\Kernel&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;D:\\front\\tic-tac-toe-back\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest.php&quot;,
+            &quot;line&quot;: 21,
+            &quot;function&quot;: &quot;Illuminate\\Pipeline\\{closure}&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Pipeline\\Pipeline&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;D:\\front\\tic-tac-toe-back\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\ConvertEmptyStringsToNull.php&quot;,
+            &quot;line&quot;: 31,
+            &quot;function&quot;: &quot;handle&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;D:\\front\\tic-tac-toe-back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php&quot;,
+            &quot;line&quot;: 167,
+            &quot;function&quot;: &quot;handle&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Foundation\\Http\\Middleware\\ConvertEmptyStringsToNull&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;D:\\front\\tic-tac-toe-back\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest.php&quot;,
+            &quot;line&quot;: 21,
+            &quot;function&quot;: &quot;Illuminate\\Pipeline\\{closure}&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Pipeline\\Pipeline&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;D:\\front\\tic-tac-toe-back\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\TrimStrings.php&quot;,
+            &quot;line&quot;: 40,
+            &quot;function&quot;: &quot;handle&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;D:\\front\\tic-tac-toe-back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php&quot;,
+            &quot;line&quot;: 167,
+            &quot;function&quot;: &quot;handle&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Foundation\\Http\\Middleware\\TrimStrings&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;D:\\front\\tic-tac-toe-back\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\ValidatePostSize.php&quot;,
+            &quot;line&quot;: 27,
+            &quot;function&quot;: &quot;Illuminate\\Pipeline\\{closure}&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Pipeline\\Pipeline&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;D:\\front\\tic-tac-toe-back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php&quot;,
+            &quot;line&quot;: 167,
+            &quot;function&quot;: &quot;handle&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Foundation\\Http\\Middleware\\ValidatePostSize&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;D:\\front\\tic-tac-toe-back\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\PreventRequestsDuringMaintenance.php&quot;,
+            &quot;line&quot;: 86,
+            &quot;function&quot;: &quot;Illuminate\\Pipeline\\{closure}&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Pipeline\\Pipeline&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;D:\\front\\tic-tac-toe-back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php&quot;,
+            &quot;line&quot;: 167,
+            &quot;function&quot;: &quot;handle&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Foundation\\Http\\Middleware\\PreventRequestsDuringMaintenance&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;D:\\front\\tic-tac-toe-back\\vendor\\fruitcake\\laravel-cors\\src\\HandleCors.php&quot;,
+            &quot;line&quot;: 52,
+            &quot;function&quot;: &quot;Illuminate\\Pipeline\\{closure}&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Pipeline\\Pipeline&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;D:\\front\\tic-tac-toe-back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php&quot;,
+            &quot;line&quot;: 167,
+            &quot;function&quot;: &quot;handle&quot;,
+            &quot;class&quot;: &quot;Fruitcake\\Cors\\HandleCors&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;D:\\front\\tic-tac-toe-back\\vendor\\laravel\\framework\\src\\Illuminate\\Http\\Middleware\\TrustProxies.php&quot;,
+            &quot;line&quot;: 39,
+            &quot;function&quot;: &quot;Illuminate\\Pipeline\\{closure}&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Pipeline\\Pipeline&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;D:\\front\\tic-tac-toe-back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php&quot;,
+            &quot;line&quot;: 167,
+            &quot;function&quot;: &quot;handle&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Http\\Middleware\\TrustProxies&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;D:\\front\\tic-tac-toe-back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php&quot;,
+            &quot;line&quot;: 103,
+            &quot;function&quot;: &quot;Illuminate\\Pipeline\\{closure}&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Pipeline\\Pipeline&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;D:\\front\\tic-tac-toe-back\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php&quot;,
+            &quot;line&quot;: 142,
+            &quot;function&quot;: &quot;then&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Pipeline\\Pipeline&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;D:\\front\\tic-tac-toe-back\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php&quot;,
+            &quot;line&quot;: 111,
+            &quot;function&quot;: &quot;sendRequestThroughRouter&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Foundation\\Http\\Kernel&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;D:\\front\\tic-tac-toe-back\\vendor\\knuckleswtf\\scribe\\src\\Extracting\\Strategies\\Responses\\ResponseCalls.php&quot;,
+            &quot;line&quot;: 299,
+            &quot;function&quot;: &quot;handle&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Foundation\\Http\\Kernel&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;D:\\front\\tic-tac-toe-back\\vendor\\knuckleswtf\\scribe\\src\\Extracting\\Strategies\\Responses\\ResponseCalls.php&quot;,
+            &quot;line&quot;: 287,
+            &quot;function&quot;: &quot;callLaravelOrLumenRoute&quot;,
+            &quot;class&quot;: &quot;Knuckles\\Scribe\\Extracting\\Strategies\\Responses\\ResponseCalls&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;D:\\front\\tic-tac-toe-back\\vendor\\knuckleswtf\\scribe\\src\\Extracting\\Strategies\\Responses\\ResponseCalls.php&quot;,
+            &quot;line&quot;: 89,
+            &quot;function&quot;: &quot;makeApiCall&quot;,
+            &quot;class&quot;: &quot;Knuckles\\Scribe\\Extracting\\Strategies\\Responses\\ResponseCalls&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;D:\\front\\tic-tac-toe-back\\vendor\\knuckleswtf\\scribe\\src\\Extracting\\Strategies\\Responses\\ResponseCalls.php&quot;,
+            &quot;line&quot;: 45,
+            &quot;function&quot;: &quot;makeResponseCall&quot;,
+            &quot;class&quot;: &quot;Knuckles\\Scribe\\Extracting\\Strategies\\Responses\\ResponseCalls&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;D:\\front\\tic-tac-toe-back\\vendor\\knuckleswtf\\scribe\\src\\Extracting\\Strategies\\Responses\\ResponseCalls.php&quot;,
+            &quot;line&quot;: 35,
+            &quot;function&quot;: &quot;makeResponseCallIfConditionsPass&quot;,
+            &quot;class&quot;: &quot;Knuckles\\Scribe\\Extracting\\Strategies\\Responses\\ResponseCalls&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;D:\\front\\tic-tac-toe-back\\vendor\\knuckleswtf\\scribe\\src\\Extracting\\Extractor.php&quot;,
+            &quot;line&quot;: 222,
+            &quot;function&quot;: &quot;__invoke&quot;,
+            &quot;class&quot;: &quot;Knuckles\\Scribe\\Extracting\\Strategies\\Responses\\ResponseCalls&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;D:\\front\\tic-tac-toe-back\\vendor\\knuckleswtf\\scribe\\src\\Extracting\\Extractor.php&quot;,
+            &quot;line&quot;: 179,
+            &quot;function&quot;: &quot;iterateThroughStrategies&quot;,
+            &quot;class&quot;: &quot;Knuckles\\Scribe\\Extracting\\Extractor&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;D:\\front\\tic-tac-toe-back\\vendor\\knuckleswtf\\scribe\\src\\Extracting\\Extractor.php&quot;,
+            &quot;line&quot;: 116,
+            &quot;function&quot;: &quot;fetchResponses&quot;,
+            &quot;class&quot;: &quot;Knuckles\\Scribe\\Extracting\\Extractor&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;D:\\front\\tic-tac-toe-back\\vendor\\knuckleswtf\\scribe\\src\\GroupedEndpoints\\GroupedEndpointsFromApp.php&quot;,
+            &quot;line&quot;: 123,
+            &quot;function&quot;: &quot;processRoute&quot;,
+            &quot;class&quot;: &quot;Knuckles\\Scribe\\Extracting\\Extractor&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;D:\\front\\tic-tac-toe-back\\vendor\\knuckleswtf\\scribe\\src\\GroupedEndpoints\\GroupedEndpointsFromApp.php&quot;,
+            &quot;line&quot;: 80,
+            &quot;function&quot;: &quot;extractEndpointsInfoFromLaravelApp&quot;,
+            &quot;class&quot;: &quot;Knuckles\\Scribe\\GroupedEndpoints\\GroupedEndpointsFromApp&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;D:\\front\\tic-tac-toe-back\\vendor\\knuckleswtf\\scribe\\src\\GroupedEndpoints\\GroupedEndpointsFromApp.php&quot;,
+            &quot;line&quot;: 56,
+            &quot;function&quot;: &quot;extractEndpointsInfoAndWriteToDisk&quot;,
+            &quot;class&quot;: &quot;Knuckles\\Scribe\\GroupedEndpoints\\GroupedEndpointsFromApp&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;D:\\front\\tic-tac-toe-back\\vendor\\knuckleswtf\\scribe\\src\\Commands\\GenerateDocumentation.php&quot;,
+            &quot;line&quot;: 55,
+            &quot;function&quot;: &quot;get&quot;,
+            &quot;class&quot;: &quot;Knuckles\\Scribe\\GroupedEndpoints\\GroupedEndpointsFromApp&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;D:\\front\\tic-tac-toe-back\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php&quot;,
+            &quot;line&quot;: 36,
+            &quot;function&quot;: &quot;handle&quot;,
+            &quot;class&quot;: &quot;Knuckles\\Scribe\\Commands\\GenerateDocumentation&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;D:\\front\\tic-tac-toe-back\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Util.php&quot;,
+            &quot;line&quot;: 40,
+            &quot;function&quot;: &quot;Illuminate\\Container\\{closure}&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Container\\BoundMethod&quot;,
+            &quot;type&quot;: &quot;::&quot;
+        },
+        {
+            &quot;file&quot;: &quot;D:\\front\\tic-tac-toe-back\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php&quot;,
+            &quot;line&quot;: 93,
+            &quot;function&quot;: &quot;unwrapIfClosure&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Container\\Util&quot;,
+            &quot;type&quot;: &quot;::&quot;
+        },
+        {
+            &quot;file&quot;: &quot;D:\\front\\tic-tac-toe-back\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php&quot;,
+            &quot;line&quot;: 37,
+            &quot;function&quot;: &quot;callBoundMethod&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Container\\BoundMethod&quot;,
+            &quot;type&quot;: &quot;::&quot;
+        },
+        {
+            &quot;file&quot;: &quot;D:\\front\\tic-tac-toe-back\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php&quot;,
+            &quot;line&quot;: 653,
+            &quot;function&quot;: &quot;call&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Container\\BoundMethod&quot;,
+            &quot;type&quot;: &quot;::&quot;
+        },
+        {
+            &quot;file&quot;: &quot;D:\\front\\tic-tac-toe-back\\vendor\\laravel\\framework\\src\\Illuminate\\Console\\Command.php&quot;,
+            &quot;line&quot;: 136,
+            &quot;function&quot;: &quot;call&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Container\\Container&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;D:\\front\\tic-tac-toe-back\\vendor\\symfony\\console\\Command\\Command.php&quot;,
+            &quot;line&quot;: 298,
+            &quot;function&quot;: &quot;execute&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Console\\Command&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;D:\\front\\tic-tac-toe-back\\vendor\\laravel\\framework\\src\\Illuminate\\Console\\Command.php&quot;,
+            &quot;line&quot;: 121,
+            &quot;function&quot;: &quot;run&quot;,
+            &quot;class&quot;: &quot;Symfony\\Component\\Console\\Command\\Command&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;D:\\front\\tic-tac-toe-back\\vendor\\symfony\\console\\Application.php&quot;,
+            &quot;line&quot;: 1024,
+            &quot;function&quot;: &quot;run&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Console\\Command&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;D:\\front\\tic-tac-toe-back\\vendor\\symfony\\console\\Application.php&quot;,
+            &quot;line&quot;: 299,
+            &quot;function&quot;: &quot;doRunCommand&quot;,
+            &quot;class&quot;: &quot;Symfony\\Component\\Console\\Application&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;D:\\front\\tic-tac-toe-back\\vendor\\symfony\\console\\Application.php&quot;,
+            &quot;line&quot;: 171,
+            &quot;function&quot;: &quot;doRun&quot;,
+            &quot;class&quot;: &quot;Symfony\\Component\\Console\\Application&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;D:\\front\\tic-tac-toe-back\\vendor\\laravel\\framework\\src\\Illuminate\\Console\\Application.php&quot;,
+            &quot;line&quot;: 94,
+            &quot;function&quot;: &quot;run&quot;,
+            &quot;class&quot;: &quot;Symfony\\Component\\Console\\Application&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;D:\\front\\tic-tac-toe-back\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php&quot;,
+            &quot;line&quot;: 129,
+            &quot;function&quot;: &quot;run&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Console\\Application&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;D:\\front\\tic-tac-toe-back\\artisan&quot;,
+            &quot;line&quot;: 37,
+            &quot;function&quot;: &quot;handle&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Foundation\\Console\\Kernel&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        }
+    ]
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-POSTapi-login" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-POSTapi-login"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-POSTapi-login"></code></pre>
+</span>
+<span id="execution-error-POSTapi-login" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-POSTapi-login"></code></pre>
+</span>
+<form id="form-POSTapi-login" data-method="POST"
+      data-path="api/login"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}'
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('POSTapi-login', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-POSTapi-login"
+                    onclick="tryItOut('POSTapi-login');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-POSTapi-login"
+                    onclick="cancelTryOut('POSTapi-login');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-POSTapi-login" hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-black">POST</small>
+            <b><code>api/login</code></b>
+        </p>
+                            <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+        <p>
+            <b><code>email</code></b>&nbsp;&nbsp;<small>string</small>     <i>optional</i> &nbsp;
+                <input type="text"
+               name="email"
+               data-endpoint="POSTapi-login"
+               value="eichmann.lynn@example.com"
+               data-component="body" hidden>
+    <br>
+<p>Must be a valid email address.</p>
+        </p>
+                <p>
+            <b><code>password</code></b>&nbsp;&nbsp;<small>string</small>     <i>optional</i> &nbsp;
+                <input type="text"
+               name="password"
+               data-endpoint="POSTapi-login"
+               value="numquam"
+               data-component="body" hidden>
+    <br>
+
+        </p>
+        </form>
+
+            <h2 id="endpoints-POSTapi-register">POST api/register</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-POSTapi-register">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request POST \
+    "http://localhost/api/register" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json" \
+    --data "{
+    \"name\": \"voluptatem\",
+    \"email\": \"zechariah.ernser@example.com\",
+    \"password\": \"quod\",
+    \"confirm_password\": \"molestiae\"
+}"
+</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://localhost/api/register"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+let body = {
+    "name": "voluptatem",
+    "email": "zechariah.ernser@example.com",
+    "password": "quod",
+    "confirm_password": "molestiae"
+};
+
+fetch(url, {
+    method: "POST",
+    headers,
+    body: JSON.stringify(body),
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-POSTapi-register">
+            <blockquote>
+            <p>Example response (422):</p>
+        </blockquote>
+                <details class="annotation">
+            <summary>
+                <small onclick="textContent = parentElement.parentElement.open ? 'Show headers' : 'Hide headers'">Show headers</small>
+            </summary>
+            <pre><code class="language-http">cache-control: no-cache, private
+content-type: application/json
+x-ratelimit-limit: 60
+x-ratelimit-remaining: 58
+access-control-allow-origin: *
+ </code></pre>
+        </details>         <pre>
+
+<code class="language-json">{
+    &quot;message&quot;: &quot;The given data was invalid.&quot;,
+    &quot;errors&quot;: {
+        &quot;confirm_password&quot;: [
+            &quot;The confirm password and password must match.&quot;
+        ]
+    }
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-POSTapi-register" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-POSTapi-register"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-POSTapi-register"></code></pre>
+</span>
+<span id="execution-error-POSTapi-register" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-POSTapi-register"></code></pre>
+</span>
+<form id="form-POSTapi-register" data-method="POST"
+      data-path="api/register"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}'
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('POSTapi-register', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-POSTapi-register"
+                    onclick="tryItOut('POSTapi-register');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-POSTapi-register"
+                    onclick="cancelTryOut('POSTapi-register');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-POSTapi-register" hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-black">POST</small>
+            <b><code>api/register</code></b>
+        </p>
+                            <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+        <p>
+            <b><code>name</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
+                <input type="text"
+               name="name"
+               data-endpoint="POSTapi-register"
+               value="voluptatem"
+               data-component="body" hidden>
+    <br>
+
+        </p>
+                <p>
+            <b><code>email</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
+                <input type="text"
+               name="email"
+               data-endpoint="POSTapi-register"
+               value="zechariah.ernser@example.com"
+               data-component="body" hidden>
+    <br>
+<p>Must be a valid email address.</p>
+        </p>
+                <p>
+            <b><code>password</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
+                <input type="text"
+               name="password"
+               data-endpoint="POSTapi-register"
+               value="quod"
+               data-component="body" hidden>
+    <br>
+
+        </p>
+                <p>
+            <b><code>confirm_password</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
+                <input type="text"
+               name="confirm_password"
+               data-endpoint="POSTapi-register"
+               value="molestiae"
+               data-component="body" hidden>
+    <br>
+<p>The value and <code>password</code> must match.</p>
+        </p>
+        </form>
+
+            <h2 id="endpoints-GETapi-user--id-">Display the specified resource.</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-GETapi-user--id-">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request GET \
+    --get "http://localhost/api/user/1" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json"</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://localhost/api/user/1"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers,
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-GETapi-user--id-">
+            <blockquote>
+            <p>Example response (401):</p>
+        </blockquote>
+                <details class="annotation">
+            <summary>
+                <small onclick="textContent = parentElement.parentElement.open ? 'Show headers' : 'Hide headers'">Show headers</small>
+            </summary>
+            <pre><code class="language-http">cache-control: no-cache, private
+content-type: application/json
+access-control-allow-origin: *
+ </code></pre>
+        </details>         <pre>
+
+<code class="language-json">{
+    &quot;message&quot;: &quot;Unauthenticated.&quot;
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-GETapi-user--id-" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-GETapi-user--id-"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-GETapi-user--id-"></code></pre>
+</span>
+<span id="execution-error-GETapi-user--id-" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-GETapi-user--id-"></code></pre>
+</span>
+<form id="form-GETapi-user--id-" data-method="GET"
+      data-path="api/user/{id}"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}'
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('GETapi-user--id-', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-GETapi-user--id-"
+                    onclick="tryItOut('GETapi-user--id-');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-GETapi-user--id-"
+                    onclick="cancelTryOut('GETapi-user--id-');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-GETapi-user--id-" hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-green">GET</small>
+            <b><code>api/user/{id}</code></b>
+        </p>
+                    <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
+                    <p>
+                <b><code>id</code></b>&nbsp;&nbsp;<small>integer</small>  &nbsp;
+                <input type="number"
+               name="id"
+               data-endpoint="GETapi-user--id-"
+               value="1"
+               data-component="url" hidden>
+    <br>
+<p>The ID of the user.</p>
+            </p>
+                    </form>
+
+            <h2 id="endpoints-PUTapi-user--id-">Update the specified resource in storage.</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-PUTapi-user--id-">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request PUT \
+    "http://localhost/api/user/1" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json"</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://localhost/api/user/1"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "PUT",
+    headers,
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-PUTapi-user--id-">
+            <blockquote>
+            <p>Example response (401):</p>
+        </blockquote>
+                <details class="annotation">
+            <summary>
+                <small onclick="textContent = parentElement.parentElement.open ? 'Show headers' : 'Hide headers'">Show headers</small>
+            </summary>
+            <pre><code class="language-http">cache-control: no-cache, private
+content-type: application/json
+access-control-allow-origin: *
+ </code></pre>
+        </details>         <pre>
+
+<code class="language-json">{
+    &quot;message&quot;: &quot;Unauthenticated.&quot;
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-PUTapi-user--id-" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-PUTapi-user--id-"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-PUTapi-user--id-"></code></pre>
+</span>
+<span id="execution-error-PUTapi-user--id-" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-PUTapi-user--id-"></code></pre>
+</span>
+<form id="form-PUTapi-user--id-" data-method="PUT"
+      data-path="api/user/{id}"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}'
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('PUTapi-user--id-', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-PUTapi-user--id-"
+                    onclick="tryItOut('PUTapi-user--id-');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-PUTapi-user--id-"
+                    onclick="cancelTryOut('PUTapi-user--id-');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-PUTapi-user--id-" hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-darkblue">PUT</small>
+            <b><code>api/user/{id}</code></b>
+        </p>
+            <p>
+            <small class="badge badge-purple">PATCH</small>
+            <b><code>api/user/{id}</code></b>
+        </p>
+                    <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
+                    <p>
+                <b><code>id</code></b>&nbsp;&nbsp;<small>integer</small>  &nbsp;
+                <input type="number"
+               name="id"
+               data-endpoint="PUTapi-user--id-"
+               value="1"
+               data-component="url" hidden>
+    <br>
+<p>The ID of the user.</p>
+            </p>
+                    </form>
+
+            <h2 id="endpoints-DELETEapi-user--id-">Remove the specified resource from storage.</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-DELETEapi-user--id-">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request DELETE \
+    "http://localhost/api/user/1" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json"</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://localhost/api/user/1"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "DELETE",
+    headers,
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-DELETEapi-user--id-">
+            <blockquote>
+            <p>Example response (401):</p>
+        </blockquote>
+                <details class="annotation">
+            <summary>
+                <small onclick="textContent = parentElement.parentElement.open ? 'Show headers' : 'Hide headers'">Show headers</small>
+            </summary>
+            <pre><code class="language-http">cache-control: no-cache, private
+content-type: application/json
+access-control-allow-origin: *
+ </code></pre>
+        </details>         <pre>
+
+<code class="language-json">{
+    &quot;message&quot;: &quot;Unauthenticated.&quot;
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-DELETEapi-user--id-" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-DELETEapi-user--id-"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-DELETEapi-user--id-"></code></pre>
+</span>
+<span id="execution-error-DELETEapi-user--id-" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-DELETEapi-user--id-"></code></pre>
+</span>
+<form id="form-DELETEapi-user--id-" data-method="DELETE"
+      data-path="api/user/{id}"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}'
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('DELETEapi-user--id-', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-DELETEapi-user--id-"
+                    onclick="tryItOut('DELETEapi-user--id-');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-DELETEapi-user--id-"
+                    onclick="cancelTryOut('DELETEapi-user--id-');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-DELETEapi-user--id-" hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-red">DELETE</small>
+            <b><code>api/user/{id}</code></b>
+        </p>
+                    <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
+                    <p>
+                <b><code>id</code></b>&nbsp;&nbsp;<small>integer</small>  &nbsp;
+                <input type="number"
+               name="id"
+               data-endpoint="DELETEapi-user--id-"
+               value="1"
+               data-component="url" hidden>
+    <br>
+<p>The ID of the user.</p>
+            </p>
+                    </form>
+
+    
+
+        
+    </div>
+    <div class="dark-box">
+                    <div class="lang-selector">
+                                                        <button type="button" class="lang-button" data-language-name="bash">bash</button>
+                                                        <button type="button" class="lang-button" data-language-name="javascript">javascript</button>
+                            </div>
+            </div>
+</div>
+</body>
+</html>

@@ -2,6 +2,9 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Game\GameController;
+use App\Http\Controllers\AuthController;
+use App\Http\Controllers\User\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,11 +17,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
+Route::group(['middleware' => ['auth:sanctum']], function(){
+    Route::apiResource('/user', UserController::class, ['except' => ['store']]);
+    Route::apiResource('/game', GameController::class);
+    Route::get('/game/log', [GameController::class, 'move']);
 });
 
-
-Route::get('auth/google', 'Auth\GoogleAuthController@redirectToGoogle');
-
-Route::get('auth/google/callback', 'Auth\GoogleAuthController@handleGoogleCallback');
+Route::post('login', [AuthController::class, 'signin']);
+Route::post('register', [AuthController::class, 'signup']);

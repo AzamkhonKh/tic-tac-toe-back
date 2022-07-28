@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "b5969aba8740a38d540bb782231619f0",
+    "content-hash": "7a42575847895f970ad60104144ce129",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -1693,6 +1693,75 @@
             "time": "2022-03-23T12:38:24+00:00"
         },
         {
+            "name": "lcobucci/jwt",
+            "version": "3.3.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/lcobucci/jwt.git",
+                "reference": "c1123697f6a2ec29162b82f170dd4a491f524773"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/lcobucci/jwt/zipball/c1123697f6a2ec29162b82f170dd4a491f524773",
+                "reference": "c1123697f6a2ec29162b82f170dd4a491f524773",
+                "shasum": ""
+            },
+            "require": {
+                "ext-mbstring": "*",
+                "ext-openssl": "*",
+                "php": "^5.6 || ^7.0"
+            },
+            "require-dev": {
+                "mikey179/vfsstream": "~1.5",
+                "phpmd/phpmd": "~2.2",
+                "phpunit/php-invoker": "~1.1",
+                "phpunit/phpunit": "^5.7 || ^7.3",
+                "squizlabs/php_codesniffer": "~2.3"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "3.1-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Lcobucci\\JWT\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Luís Otávio Cobucci Oblonczyk",
+                    "email": "lcobucci@gmail.com",
+                    "role": "Developer"
+                }
+            ],
+            "description": "A simple library to work with JSON Web Token and JSON Web Signature",
+            "keywords": [
+                "JWS",
+                "jwt"
+            ],
+            "support": {
+                "issues": "https://github.com/lcobucci/jwt/issues",
+                "source": "https://github.com/lcobucci/jwt/tree/3.3.3"
+            },
+            "funding": [
+                {
+                    "url": "https://github.com/lcobucci",
+                    "type": "github"
+                },
+                {
+                    "url": "https://www.patreon.com/lcobucci",
+                    "type": "patreon"
+                }
+            ],
+            "time": "2020-08-20T13:22:28+00:00"
+        },
+        {
             "name": "league/commonmark",
             "version": "2.3.4",
             "source": {
@@ -2207,6 +2276,73 @@
                 }
             ],
             "time": "2022-07-24T11:55:47+00:00"
+        },
+        {
+            "name": "namshi/jose",
+            "version": "7.2.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/namshi/jose.git",
+                "reference": "89a24d7eb3040e285dd5925fcad992378b82bcff"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/namshi/jose/zipball/89a24d7eb3040e285dd5925fcad992378b82bcff",
+                "reference": "89a24d7eb3040e285dd5925fcad992378b82bcff",
+                "shasum": ""
+            },
+            "require": {
+                "ext-date": "*",
+                "ext-hash": "*",
+                "ext-json": "*",
+                "ext-pcre": "*",
+                "ext-spl": "*",
+                "php": ">=5.5",
+                "symfony/polyfill-php56": "^1.0"
+            },
+            "require-dev": {
+                "phpseclib/phpseclib": "^2.0",
+                "phpunit/phpunit": "^4.5|^5.0",
+                "satooshi/php-coveralls": "^1.0"
+            },
+            "suggest": {
+                "ext-openssl": "Allows to use OpenSSL as crypto engine.",
+                "phpseclib/phpseclib": "Allows to use Phpseclib as crypto engine, use version ^2.0."
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Namshi\\JOSE\\": "src/Namshi/JOSE/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Alessandro Nadalin",
+                    "email": "alessandro.nadalin@gmail.com"
+                },
+                {
+                    "name": "Alessandro Cinelli (cirpo)",
+                    "email": "alessandro.cinelli@gmail.com"
+                }
+            ],
+            "description": "JSON Object Signing and Encryption library for PHP.",
+            "keywords": [
+                "JSON Web Signature",
+                "JSON Web Token",
+                "JWS",
+                "json",
+                "jwt",
+                "token"
+            ],
+            "support": {
+                "issues": "https://github.com/namshi/jose/issues",
+                "source": "https://github.com/namshi/jose/tree/master"
+            },
+            "time": "2016-12-05T07:27:31+00:00"
         },
         {
             "name": "nesbot/carbon",
@@ -5735,6 +5871,74 @@
             "time": "2022-05-24T11:49:31+00:00"
         },
         {
+            "name": "symfony/polyfill-php56",
+            "version": "v1.20.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/polyfill-php56.git",
+                "reference": "54b8cd7e6c1643d78d011f3be89f3ef1f9f4c675"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/polyfill-php56/zipball/54b8cd7e6c1643d78d011f3be89f3ef1f9f4c675",
+                "reference": "54b8cd7e6c1643d78d011f3be89f3ef1f9f4c675",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.1"
+            },
+            "type": "metapackage",
+            "extra": {
+                "branch-alias": {
+                    "dev-main": "1.20-dev"
+                },
+                "thanks": {
+                    "name": "symfony/polyfill",
+                    "url": "https://github.com/symfony/polyfill"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Nicolas Grekas",
+                    "email": "p@tchwork.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "https://symfony.com/contributors"
+                }
+            ],
+            "description": "Symfony polyfill backporting some PHP 5.6+ features to lower PHP versions",
+            "homepage": "https://symfony.com",
+            "keywords": [
+                "compatibility",
+                "polyfill",
+                "portable",
+                "shim"
+            ],
+            "support": {
+                "source": "https://github.com/symfony/polyfill-php56/tree/v1.20.0"
+            },
+            "funding": [
+                {
+                    "url": "https://symfony.com/sponsor",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://github.com/fabpot",
+                    "type": "github"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
+                    "type": "tidelift"
+                }
+            ],
+            "time": "2020-10-23T14:02:19+00:00"
+        },
+        {
             "name": "symfony/polyfill-php72",
             "version": "v1.26.0",
             "source": {
@@ -6778,6 +6982,90 @@
             "time": "2021-12-08T09:12:39+00:00"
         },
         {
+            "name": "tymon/jwt-auth",
+            "version": "1.0.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/tymondesigns/jwt-auth.git",
+                "reference": "e588cb719539366c0e2f6017f975379cb73e9680"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/tymondesigns/jwt-auth/zipball/e588cb719539366c0e2f6017f975379cb73e9680",
+                "reference": "e588cb719539366c0e2f6017f975379cb73e9680",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/auth": "^5.2|^6|^7|^8",
+                "illuminate/contracts": "^5.2|^6|^7|^8",
+                "illuminate/http": "^5.2|^6|^7|^8",
+                "illuminate/support": "^5.2|^6|^7|^8",
+                "lcobucci/jwt": "<3.4",
+                "namshi/jose": "^7.0",
+                "nesbot/carbon": "^1.0|^2.0",
+                "php": "^5.5.9|^7.0"
+            },
+            "require-dev": {
+                "illuminate/console": "^5.2|^6|^7|^8",
+                "illuminate/database": "^5.2|^6|^7|^8",
+                "illuminate/routing": "^5.2|^6|^7|^8",
+                "mockery/mockery": ">=0.9.9",
+                "phpunit/phpunit": "~4.8|~6.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-develop": "1.0-dev"
+                },
+                "laravel": {
+                    "aliases": {
+                        "JWTAuth": "Tymon\\JWTAuth\\Facades\\JWTAuth",
+                        "JWTFactory": "Tymon\\JWTAuth\\Facades\\JWTFactory"
+                    },
+                    "providers": [
+                        "Tymon\\JWTAuth\\Providers\\LaravelServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Tymon\\JWTAuth\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Sean Tymon",
+                    "email": "tymon148@gmail.com",
+                    "homepage": "https://tymon.xyz",
+                    "role": "Developer"
+                }
+            ],
+            "description": "JSON Web Token Authentication for Laravel and Lumen",
+            "homepage": "https://github.com/tymondesigns/jwt-auth",
+            "keywords": [
+                "Authentication",
+                "JSON Web Token",
+                "auth",
+                "jwt",
+                "laravel"
+            ],
+            "support": {
+                "issues": "https://github.com/tymondesigns/jwt-auth/issues",
+                "source": "https://github.com/tymondesigns/jwt-auth"
+            },
+            "funding": [
+                {
+                    "url": "https://www.patreon.com/seantymon",
+                    "type": "patreon"
+                }
+            ],
+            "time": "2020-11-27T12:32:42+00:00"
+        },
+        {
             "name": "vlucas/phpdotenv",
             "version": "v5.4.1",
             "source": {
@@ -7060,6 +7348,56 @@
                 }
             ],
             "time": "2022-03-03T08:28:38+00:00"
+        },
+        {
+            "name": "erusev/parsedown",
+            "version": "1.7.4",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/erusev/parsedown.git",
+                "reference": "cb17b6477dfff935958ba01325f2e8a2bfa6dab3"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/erusev/parsedown/zipball/cb17b6477dfff935958ba01325f2e8a2bfa6dab3",
+                "reference": "cb17b6477dfff935958ba01325f2e8a2bfa6dab3",
+                "shasum": ""
+            },
+            "require": {
+                "ext-mbstring": "*",
+                "php": ">=5.3.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^4.8.35"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Parsedown": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Emanuil Rusev",
+                    "email": "hello@erusev.com",
+                    "homepage": "http://erusev.com"
+                }
+            ],
+            "description": "Parser for Markdown.",
+            "homepage": "http://parsedown.org",
+            "keywords": [
+                "markdown",
+                "parser"
+            ],
+            "support": {
+                "issues": "https://github.com/erusev/parsedown/issues",
+                "source": "https://github.com/erusev/parsedown/tree/1.7.x"
+            },
+            "time": "2019-12-30T22:54:17+00:00"
         },
         {
             "name": "facade/flare-client-php",
@@ -7394,6 +7732,102 @@
             "time": "2020-07-09T08:09:16+00:00"
         },
         {
+            "name": "knuckleswtf/scribe",
+            "version": "3.35.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/knuckleswtf/scribe.git",
+                "reference": "23314038867ee468682209ebd58f632b383d0f11"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/knuckleswtf/scribe/zipball/23314038867ee468682209ebd58f632b383d0f11",
+                "reference": "23314038867ee468682209ebd58f632b383d0f11",
+                "shasum": ""
+            },
+            "require": {
+                "erusev/parsedown": "1.7.4",
+                "ext-fileinfo": "*",
+                "ext-json": "*",
+                "ext-pdo": "*",
+                "fakerphp/faker": "^1.9.1",
+                "illuminate/console": "^6.0|^7.0|^8.0|^9.0",
+                "illuminate/routing": "^6.0|^7.0|^8.0|^9.0",
+                "illuminate/support": "^6.0|^7.0|^8.0|^9.0",
+                "league/flysystem": "^1.1.4|^2.1.1|^3.0",
+                "mpociot/reflection-docblock": "^1.0.1",
+                "nikic/php-parser": "^4.10",
+                "nunomaduro/collision": "^3.0|^4.0|^5.0|^6.0",
+                "php": ">=7.4",
+                "ramsey/uuid": "^3.8|^4.0",
+                "shalvah/clara": "^3.1.0",
+                "shalvah/upgrader": "0.*",
+                "spatie/data-transfer-object": "^2.6|^3.0",
+                "symfony/var-exporter": "^4.0|^5.0|^6.0",
+                "symfony/yaml": "^4.0|^5.0|^6.0"
+            },
+            "replace": {
+                "mpociot/laravel-apidoc-generator": "*"
+            },
+            "require-dev": {
+                "brianium/paratest": "^6.0",
+                "dms/phpunit-arraysubset-asserts": "^0.2.0",
+                "laravel/legacy-factories": "^1.3.0",
+                "laravel/lumen-framework": "^6.0|^7.0|^8.0|^9.0",
+                "league/fractal": "^0.19.0",
+                "nikic/fast-route": "^1.3",
+                "orchestra/testbench": "^4.0|^5.0|^6.0|^7.0",
+                "pestphp/pest": "^1.21",
+                "phpstan/phpstan": "^1.0",
+                "phpunit/phpunit": "^9.0|^10.0",
+                "symfony/css-selector": "^5.3|^6.0",
+                "symfony/dom-crawler": "^5.3|^6.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Knuckles\\Scribe\\ScribeServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Knuckles\\Camel\\": "camel/",
+                    "Knuckles\\Scribe\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Shalvah",
+                    "email": "hello@shalvah.me"
+                }
+            ],
+            "description": "Generate API documentation for humans from your Laravel codebase.✍",
+            "homepage": "http://github.com/knuckleswtf/scribe",
+            "keywords": [
+                "api",
+                "dingo",
+                "documentation",
+                "laravel"
+            ],
+            "support": {
+                "issues": "https://github.com/knuckleswtf/scribe/issues",
+                "source": "https://github.com/knuckleswtf/scribe/tree/3.35.0"
+            },
+            "funding": [
+                {
+                    "url": "https://patreon.com/shalvah",
+                    "type": "patreon"
+                }
+            ],
+            "time": "2022-07-27T21:54:59+00:00"
+        },
+        {
             "name": "laravel/sail",
             "version": "v1.15.1",
             "source": {
@@ -7524,6 +7958,59 @@
                 "source": "https://github.com/mockery/mockery/tree/1.5.0"
             },
             "time": "2022-01-20T13:18:17+00:00"
+        },
+        {
+            "name": "mpociot/reflection-docblock",
+            "version": "1.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/mpociot/reflection-docblock.git",
+                "reference": "c8b2e2b1f5cebbb06e2b5ccbf2958f2198867587"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/mpociot/reflection-docblock/zipball/c8b2e2b1f5cebbb06e2b5ccbf2958f2198867587",
+                "reference": "c8b2e2b1f5cebbb06e2b5ccbf2958f2198867587",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.3"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "~4.0"
+            },
+            "suggest": {
+                "dflydev/markdown": "~1.0",
+                "erusev/parsedown": "~1.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.0.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "Mpociot": [
+                        "src/"
+                    ]
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Mike van Riel",
+                    "email": "mike.vanriel@naenius.com"
+                }
+            ],
+            "support": {
+                "issues": "https://github.com/mpociot/reflection-docblock/issues",
+                "source": "https://github.com/mpociot/reflection-docblock/tree/master"
+            },
+            "time": "2016-06-20T20:53:12+00:00"
         },
         {
             "name": "myclabs/deep-copy",
@@ -9392,6 +9879,322 @@
                 }
             ],
             "time": "2020-09-28T06:39:44+00:00"
+        },
+        {
+            "name": "shalvah/clara",
+            "version": "3.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/shalvah/clara.git",
+                "reference": "d3ae9b277393d438edbfcf9ddb7ca42e958fa054"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/shalvah/clara/zipball/d3ae9b277393d438edbfcf9ddb7ca42e958fa054",
+                "reference": "d3ae9b277393d438edbfcf9ddb7ca42e958fa054",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.4",
+                "symfony/console": "^4.0|^5.0|^6.0"
+            },
+            "require-dev": {
+                "eloquent/phony-phpunit": "^7.0",
+                "phpunit/phpunit": "^9.1"
+            },
+            "type": "library",
+            "autoload": {
+                "files": [
+                    "helpers.php"
+                ],
+                "psr-4": {
+                    "Shalvah\\Clara\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "🔊 Simple, pretty, testable console output for CLI apps.",
+            "keywords": [
+                "cli",
+                "log",
+                "logging"
+            ],
+            "support": {
+                "issues": "https://github.com/shalvah/clara/issues",
+                "source": "https://github.com/shalvah/clara/tree/3.1.0"
+            },
+            "time": "2022-01-14T13:54:30+00:00"
+        },
+        {
+            "name": "shalvah/upgrader",
+            "version": "0.2.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/shalvah/upgrader.git",
+                "reference": "3f07bf967b450c05f0783790c6dd353a6775a424"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/shalvah/upgrader/zipball/3f07bf967b450c05f0783790c6dd353a6775a424",
+                "reference": "3f07bf967b450c05f0783790c6dd353a6775a424",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/support": "^6.0|^7.0|^8.0|^9.0",
+                "nikic/php-parser": "^4.13",
+                "php": ">=7.4"
+            },
+            "require-dev": {
+                "dms/phpunit-arraysubset-asserts": "^0.2.0",
+                "pestphp/pest": "^1.21",
+                "phpstan/phpstan": "^1.0",
+                "spatie/ray": "^1.33"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Shalvah\\Upgrader\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Shalvah",
+                    "email": "hello@shalvah.me"
+                }
+            ],
+            "description": "Create automatic upgrades for your package.",
+            "homepage": "http://github.com/shalvah/upgrader",
+            "keywords": [
+                "upgrade"
+            ],
+            "support": {
+                "issues": "https://github.com/shalvah/upgrader/issues",
+                "source": "https://github.com/shalvah/upgrader/tree/0.2.0"
+            },
+            "funding": [
+                {
+                    "url": "https://patreon.com/shalvah",
+                    "type": "patreon"
+                }
+            ],
+            "time": "2022-01-14T11:07:47+00:00"
+        },
+        {
+            "name": "spatie/data-transfer-object",
+            "version": "2.8.4",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/spatie/data-transfer-object.git",
+                "reference": "167ebbe56ead65ef23abcfae7b75f932afd496a4"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/spatie/data-transfer-object/zipball/167ebbe56ead65ef23abcfae7b75f932afd496a4",
+                "reference": "167ebbe56ead65ef23abcfae7b75f932afd496a4",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^7.4|^8.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^9.0"
+            },
+            "suggest": {
+                "phpstan/phpstan": "Take advantage of checkUninitializedProperties with \\Spatie\\DataTransferObject\\PHPstan\\PropertiesAreAlwaysInitializedExtension"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Spatie\\DataTransferObject\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Brent Roose",
+                    "email": "brent@spatie.be",
+                    "homepage": "https://spatie.be",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Data transfer objects with batteries included",
+            "homepage": "https://github.com/spatie/data-transfer-object",
+            "keywords": [
+                "data-transfer-object",
+                "spatie"
+            ],
+            "support": {
+                "issues": "https://github.com/spatie/data-transfer-object/issues",
+                "source": "https://github.com/spatie/data-transfer-object/tree/2.8.4"
+            },
+            "funding": [
+                {
+                    "url": "https://spatie.be/open-source/support-us",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://github.com/spatie",
+                    "type": "github"
+                }
+            ],
+            "time": "2021-12-07T05:41:11+00:00"
+        },
+        {
+            "name": "symfony/var-exporter",
+            "version": "v5.4.10",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/var-exporter.git",
+                "reference": "8fc03ee75eeece3d9be1ef47d26d79bea1afb340"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/var-exporter/zipball/8fc03ee75eeece3d9be1ef47d26d79bea1afb340",
+                "reference": "8fc03ee75eeece3d9be1ef47d26d79bea1afb340",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.2.5",
+                "symfony/polyfill-php80": "^1.16"
+            },
+            "require-dev": {
+                "symfony/var-dumper": "^4.4.9|^5.0.9|^6.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Symfony\\Component\\VarExporter\\": ""
+                },
+                "exclude-from-classmap": [
+                    "/Tests/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Nicolas Grekas",
+                    "email": "p@tchwork.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "https://symfony.com/contributors"
+                }
+            ],
+            "description": "Allows exporting any serializable PHP data structure to plain PHP code",
+            "homepage": "https://symfony.com",
+            "keywords": [
+                "clone",
+                "construct",
+                "export",
+                "hydrate",
+                "instantiate",
+                "serialize"
+            ],
+            "support": {
+                "source": "https://github.com/symfony/var-exporter/tree/v5.4.10"
+            },
+            "funding": [
+                {
+                    "url": "https://symfony.com/sponsor",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://github.com/fabpot",
+                    "type": "github"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
+                    "type": "tidelift"
+                }
+            ],
+            "time": "2022-05-27T12:56:18+00:00"
+        },
+        {
+            "name": "symfony/yaml",
+            "version": "v5.4.10",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/yaml.git",
+                "reference": "04e42926429d9e8b39c174387ab990bf7817f7a2"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/yaml/zipball/04e42926429d9e8b39c174387ab990bf7817f7a2",
+                "reference": "04e42926429d9e8b39c174387ab990bf7817f7a2",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.2.5",
+                "symfony/deprecation-contracts": "^2.1|^3",
+                "symfony/polyfill-ctype": "^1.8"
+            },
+            "conflict": {
+                "symfony/console": "<5.3"
+            },
+            "require-dev": {
+                "symfony/console": "^5.3|^6.0"
+            },
+            "suggest": {
+                "symfony/console": "For validating YAML files using the lint command"
+            },
+            "bin": [
+                "Resources/bin/yaml-lint"
+            ],
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Symfony\\Component\\Yaml\\": ""
+                },
+                "exclude-from-classmap": [
+                    "/Tests/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Fabien Potencier",
+                    "email": "fabien@symfony.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "https://symfony.com/contributors"
+                }
+            ],
+            "description": "Loads and dumps YAML files",
+            "homepage": "https://symfony.com",
+            "support": {
+                "source": "https://github.com/symfony/yaml/tree/v5.4.10"
+            },
+            "funding": [
+                {
+                    "url": "https://symfony.com/sponsor",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://github.com/fabpot",
+                    "type": "github"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
+                    "type": "tidelift"
+                }
+            ],
+            "time": "2022-06-20T11:50:59+00:00"
         },
         {
             "name": "theseer/tokenizer",

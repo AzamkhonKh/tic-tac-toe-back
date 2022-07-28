@@ -1,0 +1,632 @@
+{
+    "variable": [
+        {
+            "id": "baseUrl",
+            "key": "baseUrl",
+            "type": "string",
+            "name": "string",
+            "value": "http:\/\/localhost"
+        }
+    ],
+    "info": {
+        "name": "Laravel",
+        "_postman_id": "86e97560-6c59-4aee-914b-3a6b7f41bdc8",
+        "description": "",
+        "schema": "https:\/\/schema.getpostman.com\/json\/collection\/v2.1.0\/collection.json"
+    },
+    "item": [
+        {
+            "name": "Endpoints",
+            "description": "",
+            "item": [
+                {
+                    "name": "Display a listing of the resource.",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/user",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/user"
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [
+                                {
+                                    "key": "cache-control",
+                                    "value": "no-cache, private"
+                                },
+                                {
+                                    "key": "content-type",
+                                    "value": "application\/json"
+                                },
+                                {
+                                    "key": "access-control-allow-origin",
+                                    "value": "*"
+                                }
+                            ],
+                            "code": 401,
+                            "body": "{\"message\":\"Unauthenticated.\"}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "Display a listing of the resource.",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/game",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/game"
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [
+                                {
+                                    "key": "cache-control",
+                                    "value": "no-cache, private"
+                                },
+                                {
+                                    "key": "content-type",
+                                    "value": "application\/json"
+                                },
+                                {
+                                    "key": "access-control-allow-origin",
+                                    "value": "*"
+                                }
+                            ],
+                            "code": 401,
+                            "body": "{\"message\":\"Unauthenticated.\"}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "Store a newly created resource in storage.",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/game",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/game"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"creator_id\":\"reiciendis\",\"opponent_id\":\"nemo\",\"grid\":19,\"game_finished\":false,\"creator_win\":true,\"schedulet_at\":\"2022-07-28T06:17:46\"}"
+                        },
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [
+                                {
+                                    "key": "cache-control",
+                                    "value": "no-cache, private"
+                                },
+                                {
+                                    "key": "content-type",
+                                    "value": "application\/json"
+                                },
+                                {
+                                    "key": "access-control-allow-origin",
+                                    "value": "*"
+                                }
+                            ],
+                            "code": 401,
+                            "body": "{\"message\":\"Unauthenticated.\"}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "Display the specified resource.",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/game\/:id",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/game\/:id",
+                            "variable": [
+                                {
+                                    "id": "id",
+                                    "key": "id",
+                                    "value": "20",
+                                    "description": "The ID of the game."
+                                }
+                            ]
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [
+                                {
+                                    "key": "cache-control",
+                                    "value": "no-cache, private"
+                                },
+                                {
+                                    "key": "content-type",
+                                    "value": "application\/json"
+                                },
+                                {
+                                    "key": "access-control-allow-origin",
+                                    "value": "*"
+                                }
+                            ],
+                            "code": 401,
+                            "body": "{\"message\":\"Unauthenticated.\"}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "Update the specified resource in storage.",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/game\/:id",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/game\/:id",
+                            "variable": [
+                                {
+                                    "id": "id",
+                                    "key": "id",
+                                    "value": "14",
+                                    "description": "The ID of the game."
+                                }
+                            ]
+                        },
+                        "method": "PUT",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"creator_id\":\"incidunt\",\"opponent_id\":\"neque\",\"grid\":19,\"game_finished\":false,\"creator_win\":false,\"schedulet_at\":\"2022-07-28T06:17:46\"}"
+                        },
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [
+                                {
+                                    "key": "cache-control",
+                                    "value": "no-cache, private"
+                                },
+                                {
+                                    "key": "content-type",
+                                    "value": "application\/json"
+                                },
+                                {
+                                    "key": "access-control-allow-origin",
+                                    "value": "*"
+                                }
+                            ],
+                            "code": 401,
+                            "body": "{\"message\":\"Unauthenticated.\"}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "Remove the specified resource from storage.",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/game\/:id",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/game\/:id",
+                            "variable": [
+                                {
+                                    "id": "id",
+                                    "key": "id",
+                                    "value": "3",
+                                    "description": "The ID of the game."
+                                }
+                            ]
+                        },
+                        "method": "DELETE",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [
+                                {
+                                    "key": "cache-control",
+                                    "value": "no-cache, private"
+                                },
+                                {
+                                    "key": "content-type",
+                                    "value": "application\/json"
+                                },
+                                {
+                                    "key": "access-control-allow-origin",
+                                    "value": "*"
+                                }
+                            ],
+                            "code": 401,
+                            "body": "{\"message\":\"Unauthenticated.\"}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "api\/login",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/login",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/login"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"email\":\"eichmann.lynn@example.com\",\"password\":\"numquam\"}"
+                        },
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [
+                                {
+                                    "key": "cache-control",
+                                    "value": "no-cache, private"
+                                },
+                                {
+                                    "key": "content-type",
+                                    "value": "application\/json"
+                                },
+                                {
+                                    "key": "x-ratelimit-limit",
+                                    "value": "60"
+                                },
+                                {
+                                    "key": "x-ratelimit-remaining",
+                                    "value": "59"
+                                },
+                                {
+                                    "key": "access-control-allow-origin",
+                                    "value": "*"
+                                }
+                            ],
+                            "code": 500,
+                            "body": "{\n    \"message\": \"Method Illuminate\\\\Validation\\\\Validator::validateReequired does not exist.\",\n    \"exception\": \"BadMethodCallException\",\n    \"file\": \"D:\\\\front\\\\tic-tac-toe-back\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Validation\\\\Validator.php\",\n    \"line\": 1534,\n    \"trace\": [\n        {\n            \"file\": \"D:\\\\front\\\\tic-tac-toe-back\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Validation\\\\Validator.php\",\n            \"line\": 610,\n            \"function\": \"__call\",\n            \"class\": \"Illuminate\\\\Validation\\\\Validator\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"D:\\\\front\\\\tic-tac-toe-back\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Validation\\\\Validator.php\",\n            \"line\": 416,\n            \"function\": \"validateAttribute\",\n            \"class\": \"Illuminate\\\\Validation\\\\Validator\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"D:\\\\front\\\\tic-tac-toe-back\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Validation\\\\Validator.php\",\n            \"line\": 447,\n            \"function\": \"passes\",\n            \"class\": \"Illuminate\\\\Validation\\\\Validator\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"D:\\\\front\\\\tic-tac-toe-back\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Validation\\\\ValidatesWhenResolvedTrait.php\",\n            \"line\": 25,\n            \"function\": \"fails\",\n            \"class\": \"Illuminate\\\\Validation\\\\Validator\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"D:\\\\front\\\\tic-tac-toe-back\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Foundation\\\\Providers\\\\FormRequestServiceProvider.php\",\n            \"line\": 30,\n            \"function\": \"validateResolved\",\n            \"class\": \"Illuminate\\\\Foundation\\\\Http\\\\FormRequest\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"D:\\\\front\\\\tic-tac-toe-back\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Container\\\\Container.php\",\n            \"line\": 1265,\n            \"function\": \"Illuminate\\\\Foundation\\\\Providers\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Foundation\\\\Providers\\\\FormRequestServiceProvider\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"D:\\\\front\\\\tic-tac-toe-back\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Container\\\\Container.php\",\n            \"line\": 1230,\n            \"function\": \"fireCallbackArray\",\n            \"class\": \"Illuminate\\\\Container\\\\Container\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"D:\\\\front\\\\tic-tac-toe-back\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Container\\\\Container.php\",\n            \"line\": 1215,\n            \"function\": \"fireAfterResolvingCallbacks\",\n            \"class\": \"Illuminate\\\\Container\\\\Container\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"D:\\\\front\\\\tic-tac-toe-back\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Container\\\\Container.php\",\n            \"line\": 778,\n            \"function\": \"fireResolvingCallbacks\",\n            \"class\": \"Illuminate\\\\Container\\\\Container\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"D:\\\\front\\\\tic-tac-toe-back\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Foundation\\\\Application.php\",\n            \"line\": 851,\n            \"function\": \"resolve\",\n            \"class\": \"Illuminate\\\\Container\\\\Container\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"D:\\\\front\\\\tic-tac-toe-back\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Container\\\\Container.php\",\n            \"line\": 694,\n            \"function\": \"resolve\",\n            \"class\": \"Illuminate\\\\Foundation\\\\Application\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"D:\\\\front\\\\tic-tac-toe-back\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Foundation\\\\Application.php\",\n            \"line\": 836,\n            \"function\": \"make\",\n            \"class\": \"Illuminate\\\\Container\\\\Container\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"D:\\\\front\\\\tic-tac-toe-back\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Routing\\\\RouteDependencyResolverTrait.php\",\n            \"line\": 79,\n            \"function\": \"make\",\n            \"class\": \"Illuminate\\\\Foundation\\\\Application\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"D:\\\\front\\\\tic-tac-toe-back\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Routing\\\\RouteDependencyResolverTrait.php\",\n            \"line\": 48,\n            \"function\": \"transformDependency\",\n            \"class\": \"Illuminate\\\\Routing\\\\ControllerDispatcher\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"D:\\\\front\\\\tic-tac-toe-back\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Routing\\\\RouteDependencyResolverTrait.php\",\n            \"line\": 28,\n            \"function\": \"resolveMethodDependencies\",\n            \"class\": \"Illuminate\\\\Routing\\\\ControllerDispatcher\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"D:\\\\front\\\\tic-tac-toe-back\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Routing\\\\ControllerDispatcher.php\",\n            \"line\": 41,\n            \"function\": \"resolveClassMethodDependencies\",\n            \"class\": \"Illuminate\\\\Routing\\\\ControllerDispatcher\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"D:\\\\front\\\\tic-tac-toe-back\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Routing\\\\Route.php\",\n            \"line\": 262,\n            \"function\": \"dispatch\",\n            \"class\": \"Illuminate\\\\Routing\\\\ControllerDispatcher\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"D:\\\\front\\\\tic-tac-toe-back\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Routing\\\\Route.php\",\n            \"line\": 205,\n            \"function\": \"runController\",\n            \"class\": \"Illuminate\\\\Routing\\\\Route\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"D:\\\\front\\\\tic-tac-toe-back\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Routing\\\\Router.php\",\n            \"line\": 721,\n            \"function\": \"run\",\n            \"class\": \"Illuminate\\\\Routing\\\\Route\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"D:\\\\front\\\\tic-tac-toe-back\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Pipeline\\\\Pipeline.php\",\n            \"line\": 128,\n            \"function\": \"Illuminate\\\\Routing\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Routing\\\\Router\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"D:\\\\front\\\\tic-tac-toe-back\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Routing\\\\Middleware\\\\SubstituteBindings.php\",\n            \"line\": 50,\n            \"function\": \"Illuminate\\\\Pipeline\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"D:\\\\front\\\\tic-tac-toe-back\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Pipeline\\\\Pipeline.php\",\n            \"line\": 167,\n            \"function\": \"handle\",\n            \"class\": \"Illuminate\\\\Routing\\\\Middleware\\\\SubstituteBindings\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"D:\\\\front\\\\tic-tac-toe-back\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Routing\\\\Middleware\\\\ThrottleRequests.php\",\n            \"line\": 127,\n            \"function\": \"Illuminate\\\\Pipeline\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"D:\\\\front\\\\tic-tac-toe-back\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Routing\\\\Middleware\\\\ThrottleRequests.php\",\n            \"line\": 103,\n            \"function\": \"handleRequest\",\n            \"class\": \"Illuminate\\\\Routing\\\\Middleware\\\\ThrottleRequests\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"D:\\\\front\\\\tic-tac-toe-back\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Routing\\\\Middleware\\\\ThrottleRequests.php\",\n            \"line\": 55,\n            \"function\": \"handleRequestUsingNamedLimiter\",\n            \"class\": \"Illuminate\\\\Routing\\\\Middleware\\\\ThrottleRequests\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"D:\\\\front\\\\tic-tac-toe-back\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Pipeline\\\\Pipeline.php\",\n            \"line\": 167,\n            \"function\": \"handle\",\n            \"class\": \"Illuminate\\\\Routing\\\\Middleware\\\\ThrottleRequests\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"D:\\\\front\\\\tic-tac-toe-back\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Pipeline\\\\Pipeline.php\",\n            \"line\": 103,\n            \"function\": \"Illuminate\\\\Pipeline\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"D:\\\\front\\\\tic-tac-toe-back\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Routing\\\\Router.php\",\n            \"line\": 723,\n            \"function\": \"then\",\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"D:\\\\front\\\\tic-tac-toe-back\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Routing\\\\Router.php\",\n            \"line\": 698,\n            \"function\": \"runRouteWithinStack\",\n            \"class\": \"Illuminate\\\\Routing\\\\Router\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"D:\\\\front\\\\tic-tac-toe-back\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Routing\\\\Router.php\",\n            \"line\": 662,\n            \"function\": \"runRoute\",\n            \"class\": \"Illuminate\\\\Routing\\\\Router\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"D:\\\\front\\\\tic-tac-toe-back\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Routing\\\\Router.php\",\n            \"line\": 651,\n            \"function\": \"dispatchToRoute\",\n            \"class\": \"Illuminate\\\\Routing\\\\Router\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"D:\\\\front\\\\tic-tac-toe-back\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Foundation\\\\Http\\\\Kernel.php\",\n            \"line\": 167,\n            \"function\": \"dispatch\",\n            \"class\": \"Illuminate\\\\Routing\\\\Router\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"D:\\\\front\\\\tic-tac-toe-back\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Pipeline\\\\Pipeline.php\",\n            \"line\": 128,\n            \"function\": \"Illuminate\\\\Foundation\\\\Http\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Foundation\\\\Http\\\\Kernel\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"D:\\\\front\\\\tic-tac-toe-back\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Foundation\\\\Http\\\\Middleware\\\\TransformsRequest.php\",\n            \"line\": 21,\n            \"function\": \"Illuminate\\\\Pipeline\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"D:\\\\front\\\\tic-tac-toe-back\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Foundation\\\\Http\\\\Middleware\\\\ConvertEmptyStringsToNull.php\",\n            \"line\": 31,\n            \"function\": \"handle\",\n            \"class\": \"Illuminate\\\\Foundation\\\\Http\\\\Middleware\\\\TransformsRequest\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"D:\\\\front\\\\tic-tac-toe-back\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Pipeline\\\\Pipeline.php\",\n            \"line\": 167,\n            \"function\": \"handle\",\n            \"class\": \"Illuminate\\\\Foundation\\\\Http\\\\Middleware\\\\ConvertEmptyStringsToNull\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"D:\\\\front\\\\tic-tac-toe-back\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Foundation\\\\Http\\\\Middleware\\\\TransformsRequest.php\",\n            \"line\": 21,\n            \"function\": \"Illuminate\\\\Pipeline\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"D:\\\\front\\\\tic-tac-toe-back\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Foundation\\\\Http\\\\Middleware\\\\TrimStrings.php\",\n            \"line\": 40,\n            \"function\": \"handle\",\n            \"class\": \"Illuminate\\\\Foundation\\\\Http\\\\Middleware\\\\TransformsRequest\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"D:\\\\front\\\\tic-tac-toe-back\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Pipeline\\\\Pipeline.php\",\n            \"line\": 167,\n            \"function\": \"handle\",\n            \"class\": \"Illuminate\\\\Foundation\\\\Http\\\\Middleware\\\\TrimStrings\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"D:\\\\front\\\\tic-tac-toe-back\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Foundation\\\\Http\\\\Middleware\\\\ValidatePostSize.php\",\n            \"line\": 27,\n            \"function\": \"Illuminate\\\\Pipeline\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"D:\\\\front\\\\tic-tac-toe-back\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Pipeline\\\\Pipeline.php\",\n            \"line\": 167,\n            \"function\": \"handle\",\n            \"class\": \"Illuminate\\\\Foundation\\\\Http\\\\Middleware\\\\ValidatePostSize\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"D:\\\\front\\\\tic-tac-toe-back\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Foundation\\\\Http\\\\Middleware\\\\PreventRequestsDuringMaintenance.php\",\n            \"line\": 86,\n            \"function\": \"Illuminate\\\\Pipeline\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"D:\\\\front\\\\tic-tac-toe-back\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Pipeline\\\\Pipeline.php\",\n            \"line\": 167,\n            \"function\": \"handle\",\n            \"class\": \"Illuminate\\\\Foundation\\\\Http\\\\Middleware\\\\PreventRequestsDuringMaintenance\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"D:\\\\front\\\\tic-tac-toe-back\\\\vendor\\\\fruitcake\\\\laravel-cors\\\\src\\\\HandleCors.php\",\n            \"line\": 52,\n            \"function\": \"Illuminate\\\\Pipeline\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"D:\\\\front\\\\tic-tac-toe-back\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Pipeline\\\\Pipeline.php\",\n            \"line\": 167,\n            \"function\": \"handle\",\n            \"class\": \"Fruitcake\\\\Cors\\\\HandleCors\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"D:\\\\front\\\\tic-tac-toe-back\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Http\\\\Middleware\\\\TrustProxies.php\",\n            \"line\": 39,\n            \"function\": \"Illuminate\\\\Pipeline\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"D:\\\\front\\\\tic-tac-toe-back\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Pipeline\\\\Pipeline.php\",\n            \"line\": 167,\n            \"function\": \"handle\",\n            \"class\": \"Illuminate\\\\Http\\\\Middleware\\\\TrustProxies\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"D:\\\\front\\\\tic-tac-toe-back\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Pipeline\\\\Pipeline.php\",\n            \"line\": 103,\n            \"function\": \"Illuminate\\\\Pipeline\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"D:\\\\front\\\\tic-tac-toe-back\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Foundation\\\\Http\\\\Kernel.php\",\n            \"line\": 142,\n            \"function\": \"then\",\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"D:\\\\front\\\\tic-tac-toe-back\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Foundation\\\\Http\\\\Kernel.php\",\n            \"line\": 111,\n            \"function\": \"sendRequestThroughRouter\",\n            \"class\": \"Illuminate\\\\Foundation\\\\Http\\\\Kernel\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"D:\\\\front\\\\tic-tac-toe-back\\\\vendor\\\\knuckleswtf\\\\scribe\\\\src\\\\Extracting\\\\Strategies\\\\Responses\\\\ResponseCalls.php\",\n            \"line\": 299,\n            \"function\": \"handle\",\n            \"class\": \"Illuminate\\\\Foundation\\\\Http\\\\Kernel\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"D:\\\\front\\\\tic-tac-toe-back\\\\vendor\\\\knuckleswtf\\\\scribe\\\\src\\\\Extracting\\\\Strategies\\\\Responses\\\\ResponseCalls.php\",\n            \"line\": 287,\n            \"function\": \"callLaravelOrLumenRoute\",\n            \"class\": \"Knuckles\\\\Scribe\\\\Extracting\\\\Strategies\\\\Responses\\\\ResponseCalls\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"D:\\\\front\\\\tic-tac-toe-back\\\\vendor\\\\knuckleswtf\\\\scribe\\\\src\\\\Extracting\\\\Strategies\\\\Responses\\\\ResponseCalls.php\",\n            \"line\": 89,\n            \"function\": \"makeApiCall\",\n            \"class\": \"Knuckles\\\\Scribe\\\\Extracting\\\\Strategies\\\\Responses\\\\ResponseCalls\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"D:\\\\front\\\\tic-tac-toe-back\\\\vendor\\\\knuckleswtf\\\\scribe\\\\src\\\\Extracting\\\\Strategies\\\\Responses\\\\ResponseCalls.php\",\n            \"line\": 45,\n            \"function\": \"makeResponseCall\",\n            \"class\": \"Knuckles\\\\Scribe\\\\Extracting\\\\Strategies\\\\Responses\\\\ResponseCalls\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"D:\\\\front\\\\tic-tac-toe-back\\\\vendor\\\\knuckleswtf\\\\scribe\\\\src\\\\Extracting\\\\Strategies\\\\Responses\\\\ResponseCalls.php\",\n            \"line\": 35,\n            \"function\": \"makeResponseCallIfConditionsPass\",\n            \"class\": \"Knuckles\\\\Scribe\\\\Extracting\\\\Strategies\\\\Responses\\\\ResponseCalls\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"D:\\\\front\\\\tic-tac-toe-back\\\\vendor\\\\knuckleswtf\\\\scribe\\\\src\\\\Extracting\\\\Extractor.php\",\n            \"line\": 222,\n            \"function\": \"__invoke\",\n            \"class\": \"Knuckles\\\\Scribe\\\\Extracting\\\\Strategies\\\\Responses\\\\ResponseCalls\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"D:\\\\front\\\\tic-tac-toe-back\\\\vendor\\\\knuckleswtf\\\\scribe\\\\src\\\\Extracting\\\\Extractor.php\",\n            \"line\": 179,\n            \"function\": \"iterateThroughStrategies\",\n            \"class\": \"Knuckles\\\\Scribe\\\\Extracting\\\\Extractor\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"D:\\\\front\\\\tic-tac-toe-back\\\\vendor\\\\knuckleswtf\\\\scribe\\\\src\\\\Extracting\\\\Extractor.php\",\n            \"line\": 116,\n            \"function\": \"fetchResponses\",\n            \"class\": \"Knuckles\\\\Scribe\\\\Extracting\\\\Extractor\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"D:\\\\front\\\\tic-tac-toe-back\\\\vendor\\\\knuckleswtf\\\\scribe\\\\src\\\\GroupedEndpoints\\\\GroupedEndpointsFromApp.php\",\n            \"line\": 123,\n            \"function\": \"processRoute\",\n            \"class\": \"Knuckles\\\\Scribe\\\\Extracting\\\\Extractor\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"D:\\\\front\\\\tic-tac-toe-back\\\\vendor\\\\knuckleswtf\\\\scribe\\\\src\\\\GroupedEndpoints\\\\GroupedEndpointsFromApp.php\",\n            \"line\": 80,\n            \"function\": \"extractEndpointsInfoFromLaravelApp\",\n            \"class\": \"Knuckles\\\\Scribe\\\\GroupedEndpoints\\\\GroupedEndpointsFromApp\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"D:\\\\front\\\\tic-tac-toe-back\\\\vendor\\\\knuckleswtf\\\\scribe\\\\src\\\\GroupedEndpoints\\\\GroupedEndpointsFromApp.php\",\n            \"line\": 56,\n            \"function\": \"extractEndpointsInfoAndWriteToDisk\",\n            \"class\": \"Knuckles\\\\Scribe\\\\GroupedEndpoints\\\\GroupedEndpointsFromApp\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"D:\\\\front\\\\tic-tac-toe-back\\\\vendor\\\\knuckleswtf\\\\scribe\\\\src\\\\Commands\\\\GenerateDocumentation.php\",\n            \"line\": 55,\n            \"function\": \"get\",\n            \"class\": \"Knuckles\\\\Scribe\\\\GroupedEndpoints\\\\GroupedEndpointsFromApp\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"D:\\\\front\\\\tic-tac-toe-back\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Container\\\\BoundMethod.php\",\n            \"line\": 36,\n            \"function\": \"handle\",\n            \"class\": \"Knuckles\\\\Scribe\\\\Commands\\\\GenerateDocumentation\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"D:\\\\front\\\\tic-tac-toe-back\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Container\\\\Util.php\",\n            \"line\": 40,\n            \"function\": \"Illuminate\\\\Container\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Container\\\\BoundMethod\",\n            \"type\": \"::\"\n        },\n        {\n            \"file\": \"D:\\\\front\\\\tic-tac-toe-back\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Container\\\\BoundMethod.php\",\n            \"line\": 93,\n            \"function\": \"unwrapIfClosure\",\n            \"class\": \"Illuminate\\\\Container\\\\Util\",\n            \"type\": \"::\"\n        },\n        {\n            \"file\": \"D:\\\\front\\\\tic-tac-toe-back\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Container\\\\BoundMethod.php\",\n            \"line\": 37,\n            \"function\": \"callBoundMethod\",\n            \"class\": \"Illuminate\\\\Container\\\\BoundMethod\",\n            \"type\": \"::\"\n        },\n        {\n            \"file\": \"D:\\\\front\\\\tic-tac-toe-back\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Container\\\\Container.php\",\n            \"line\": 653,\n            \"function\": \"call\",\n            \"class\": \"Illuminate\\\\Container\\\\BoundMethod\",\n            \"type\": \"::\"\n        },\n        {\n            \"file\": \"D:\\\\front\\\\tic-tac-toe-back\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Console\\\\Command.php\",\n            \"line\": 136,\n            \"function\": \"call\",\n            \"class\": \"Illuminate\\\\Container\\\\Container\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"D:\\\\front\\\\tic-tac-toe-back\\\\vendor\\\\symfony\\\\console\\\\Command\\\\Command.php\",\n            \"line\": 298,\n            \"function\": \"execute\",\n            \"class\": \"Illuminate\\\\Console\\\\Command\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"D:\\\\front\\\\tic-tac-toe-back\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Console\\\\Command.php\",\n            \"line\": 121,\n            \"function\": \"run\",\n            \"class\": \"Symfony\\\\Component\\\\Console\\\\Command\\\\Command\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"D:\\\\front\\\\tic-tac-toe-back\\\\vendor\\\\symfony\\\\console\\\\Application.php\",\n            \"line\": 1024,\n            \"function\": \"run\",\n            \"class\": \"Illuminate\\\\Console\\\\Command\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"D:\\\\front\\\\tic-tac-toe-back\\\\vendor\\\\symfony\\\\console\\\\Application.php\",\n            \"line\": 299,\n            \"function\": \"doRunCommand\",\n            \"class\": \"Symfony\\\\Component\\\\Console\\\\Application\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"D:\\\\front\\\\tic-tac-toe-back\\\\vendor\\\\symfony\\\\console\\\\Application.php\",\n            \"line\": 171,\n            \"function\": \"doRun\",\n            \"class\": \"Symfony\\\\Component\\\\Console\\\\Application\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"D:\\\\front\\\\tic-tac-toe-back\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Console\\\\Application.php\",\n            \"line\": 94,\n            \"function\": \"run\",\n            \"class\": \"Symfony\\\\Component\\\\Console\\\\Application\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"D:\\\\front\\\\tic-tac-toe-back\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Foundation\\\\Console\\\\Kernel.php\",\n            \"line\": 129,\n            \"function\": \"run\",\n            \"class\": \"Illuminate\\\\Console\\\\Application\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"D:\\\\front\\\\tic-tac-toe-back\\\\artisan\",\n            \"line\": 37,\n            \"function\": \"handle\",\n            \"class\": \"Illuminate\\\\Foundation\\\\Console\\\\Kernel\",\n            \"type\": \"->\"\n        }\n    ]\n}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "api\/register",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/register",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/register"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"name\":\"voluptatem\",\"email\":\"zechariah.ernser@example.com\",\"password\":\"quod\",\"confirm_password\":\"molestiae\"}"
+                        },
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [
+                                {
+                                    "key": "cache-control",
+                                    "value": "no-cache, private"
+                                },
+                                {
+                                    "key": "content-type",
+                                    "value": "application\/json"
+                                },
+                                {
+                                    "key": "x-ratelimit-limit",
+                                    "value": "60"
+                                },
+                                {
+                                    "key": "x-ratelimit-remaining",
+                                    "value": "58"
+                                },
+                                {
+                                    "key": "access-control-allow-origin",
+                                    "value": "*"
+                                }
+                            ],
+                            "code": 422,
+                            "body": "{\"message\":\"The given data was invalid.\",\"errors\":{\"confirm_password\":[\"The confirm password and password must match.\"]}}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "Display the specified resource.",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/user\/:id",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/user\/:id",
+                            "variable": [
+                                {
+                                    "id": "id",
+                                    "key": "id",
+                                    "value": "1",
+                                    "description": "The ID of the user."
+                                }
+                            ]
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [
+                                {
+                                    "key": "cache-control",
+                                    "value": "no-cache, private"
+                                },
+                                {
+                                    "key": "content-type",
+                                    "value": "application\/json"
+                                },
+                                {
+                                    "key": "access-control-allow-origin",
+                                    "value": "*"
+                                }
+                            ],
+                            "code": 401,
+                            "body": "{\"message\":\"Unauthenticated.\"}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "Update the specified resource in storage.",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/user\/:id",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/user\/:id",
+                            "variable": [
+                                {
+                                    "id": "id",
+                                    "key": "id",
+                                    "value": "1",
+                                    "description": "The ID of the user."
+                                }
+                            ]
+                        },
+                        "method": "PUT",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [
+                                {
+                                    "key": "cache-control",
+                                    "value": "no-cache, private"
+                                },
+                                {
+                                    "key": "content-type",
+                                    "value": "application\/json"
+                                },
+                                {
+                                    "key": "access-control-allow-origin",
+                                    "value": "*"
+                                }
+                            ],
+                            "code": 401,
+                            "body": "{\"message\":\"Unauthenticated.\"}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "Remove the specified resource from storage.",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/user\/:id",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/user\/:id",
+                            "variable": [
+                                {
+                                    "id": "id",
+                                    "key": "id",
+                                    "value": "1",
+                                    "description": "The ID of the user."
+                                }
+                            ]
+                        },
+                        "method": "DELETE",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [
+                                {
+                                    "key": "cache-control",
+                                    "value": "no-cache, private"
+                                },
+                                {
+                                    "key": "content-type",
+                                    "value": "application\/json"
+                                },
+                                {
+                                    "key": "access-control-allow-origin",
+                                    "value": "*"
+                                }
+                            ],
+                            "code": 401,
+                            "body": "{\"message\":\"Unauthenticated.\"}",
+                            "name": ""
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "auth": {
+        "type": "noauth"
+    }
+}
